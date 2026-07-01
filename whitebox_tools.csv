@@ -1,0 +1,969 @@
+Category,Tool,Description
+"Data Tools
+",add_point_coordinates_to_table,Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.
+"Data Tools
+",clean_vector,Removes null features and lines/polygons with fewer than the required number of vertices.
+"Data Tools
+",convert_nodata_to_zero,Converts nodata values in a raster to zero.
+"Data Tools
+",convert_raster_format,Converts raster data from one format to another.
+"Data Tools
+",csv_points_to_vector,Converts a CSV text file to vector points.
+"Data Tools
+",export_table_to_csv,Exports an attribute table to a CSV text file.
+"Data Tools
+",join_tables,Merge a vector's attribute table with another table based on a common field.
+"Data Tools
+",lines_to_polygons,Converts vector polylines to polygons.
+"Data Tools
+",merge_table_with_csv,Merge a vector's attribute table with a table contained within a CSV text file.
+"Data Tools
+",merge_vectors,"Combines two or more input vectors of the same ShapeType creating a single, new output vector."
+"Data Tools
+",modify_no_data_value,Modifies nodata values in a raster.
+"Data Tools
+",multi_part_to_single_part,Converts a vector file containing multi-part features into a vector containing only single-part features.
+"Data Tools
+",new_raster_from_base,Creates a new raster using a base image.
+"Data Tools
+",polygons_to_lines,Converts vector polygons to polylines.
+"Data Tools
+",print_geo_tiff_tags,Prints the tags within a GeoTIFF.
+"Data Tools
+",raster_to_vector_lines,Converts a raster lines features into a vector of the POLYLINE shapetype
+"Data Tools
+",raster_to_vector_points,Converts a raster dataset to a vector of the POINT shapetype.
+"Data Tools
+",raster_to_vector_polygons,Converts a raster dataset to a vector of the POLYGON shapetype.
+"Data Tools
+",reinitialize_attribute_table,Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).
+"Data Tools
+",remove_polygon_holes,Removes holes within the features of a vector polygon file.
+"Data Tools
+",set_nodata_value,Assign the NoData value for an input image.
+"Data Tools
+",single_part_to_multi_part,Converts a vector file containing multi-part features into a vector containing only single-part features.
+"Data Tools
+",vector_lines_to_raster,Converts a vector containing polylines into a raster.
+"Data Tools
+",vector_points_to_raster,Converts a vector containing points into a raster.
+"Data Tools
+",vector_polygons_to_raster,Converts a vector containing polygons into a raster.
+"GIS Analysis
+",aggregate_raster,Aggregates a raster to a lower resolution.
+"GIS Analysis
+",block_maximum_gridding,Creates a raster grid based on a set of vector points and assigns grid values using a block maximum scheme.
+"GIS Analysis
+",block_minimum_gridding,Creates a raster grid based on a set of vector points and assigns grid values using a block minimum scheme.
+"GIS Analysis
+",centroid,"Calculates the centroid, or average location, of raster polygon objects."
+"GIS Analysis
+",centroid_vector,Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.
+"GIS Analysis
+",clump,"Groups cells that form discrete areas, assigning them unique identifiers."
+"GIS Analysis
+",construct_vector_tin,Creates a vector triangular irregular network (TIN) for a set of vector points.
+"GIS Analysis
+",create_hexagonal_vector_grid,Creates a hexagonal vector grid.
+"GIS Analysis
+",create_plane,Creates a raster image based on the equation for a simple plane.
+"GIS Analysis
+",create_rectangular_vector_grid,Creates a rectangular vector grid.
+"GIS Analysis
+",dissolve,"Removes the interior, or shared, boundaries within a vector polygon coverage."
+"GIS Analysis
+",eliminate_coincident_points,"Removes any coincident, or nearly coincident, points from a vector points file."
+"GIS Analysis
+",extend_vector_lines,Extends vector lines by a specified distance.
+"GIS Analysis
+",extract_by_attribute,Extracts features from an input vector into an output file based on attribute properties.
+"GIS Analysis
+",extract_nodes,Converts vector lines or polygons into vertex points.
+"GIS Analysis
+",extract_raster_values_at_points,Extracts the values of raster(s) at vector point locations.
+"GIS Analysis
+",filter_raster_features_by_area,Removes small-area features from a raster.
+"GIS Analysis
+",find_lowest_or_highest_points,Locates the lowest and/or highest valued cells in a raster.
+"GIS Analysis
+",heat_map,"Calculates a heat map, or kernel density estimation (KDE), for an input point set."
+"GIS Analysis
+",idw_interpolation,Interpolates vector points into a raster surface using an inverse-distance weighted scheme.
+"GIS Analysis
+",layer_footprint,Creates a vector polygon footprint of the area covered by a raster grid or vector layer.
+"GIS Analysis
+",medoid,Calculates the medoid for a series of vector features contained in a shapefile.
+"GIS Analysis
+",minimum_bounding_box,Creates a vector minimum bounding rectangle around vector features.
+"GIS Analysis
+",minimum_bounding_circle,Delineates the minimum bounding circle (i.e. smallest enclosing circle) for a group of vectors.
+"GIS Analysis
+",minimum_bounding_envelope,Creates a vector axis-aligned minimum bounding rectangle (envelope) around vector features.
+"GIS Analysis
+",minimum_convex_hull,Creates a vector convex polygon around vector features.
+"GIS Analysis
+",natural_neighbour_interpolation,Creates a raster grid based on Sibson's natural neighbour method.
+"GIS Analysis
+",nearest_neighbour_gridding,Creates a raster grid based on a set of vector points and assigns grid values using the nearest neighbour.
+"GIS Analysis
+",polygon_area,Calculates the area of vector polygons.
+"GIS Analysis
+",polygon_long_axis,Used to map the long axis of polygon features.
+"GIS Analysis
+",polygon_perimeter,Calculates the perimeter of vector polygons.
+"GIS Analysis
+",polygon_short_axis,Used to map the short axis of polygon features.
+"GIS Analysis
+",radial_basis_function_interpolation,Interpolates vector points into a raster surface using a radial basis function scheme.
+"GIS Analysis
+",raster_area,Calculates the area of polygons or classes within a raster image.
+"GIS Analysis
+",raster_cell_assignment,Assign row or column number to cells.
+"GIS Analysis
+",raster_perimeter,Calculates the perimeters of polygons or classes within a raster image.
+"GIS Analysis
+",reclass,Reclassifies the values in a raster image.
+"GIS Analysis
+",reclass_equal_interval,Reclassifies the values in a raster image based on equal-ranges.
+"GIS Analysis
+",reclass_from_file,Reclassifies the values in a raster image using reclass ranges in a text file.
+"GIS Analysis
+",smooth_vectors,Smooths a vector coverage of either a POLYLINE or POLYGON base ShapeType.
+"GIS Analysis
+",split_vector_lines,Used to split a vector line coverage into even-lengthed segments.
+"GIS Analysis
+",tin_gridding,Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points.
+"GIS Analysis
+",travelling_salesman_problem,"Finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations."
+"GIS Analysis
+",vector_hex_binning,Hex-bins a set of vector points.
+"GIS Analysis
+",voronoi_diagram,Creates a vector Voronoi diagram for a set of vector points.
+"GIS Analysis/Distance Tools
+",buffer_raster,Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image.
+"GIS Analysis/Distance Tools
+",cost_allocation,Identifies the source cell to which each grid cell is connected by a least-cost pathway in a cost-distance analysis.
+"GIS Analysis/Distance Tools
+",cost_distance,Performs cost-distance accumulation on a cost surface and a group of source cells.
+"GIS Analysis/Distance Tools
+",cost_pathway,Performs cost-distance pathway analysis using a series of destination grid cells.
+"GIS Analysis/Distance Tools
+",euclidean_allocation,"Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform."
+"GIS Analysis/Distance Tools
+",euclidean_distance,Calculates the Shih and Wu (2004) Euclidean distance transform.
+"GIS Analysis/Overlay Tools
+",average_overlay,Calculates the average for each grid cell from a group of raster images.
+"GIS Analysis/Overlay Tools
+",clip,"Extract all the features, or parts of features, that overlap with the features of the clip vector."
+"GIS Analysis/Overlay Tools
+",clip_raster_to_polygon,Clips a raster to a vector polygon.
+"GIS Analysis/Overlay Tools
+",count_if,Counts the number of occurrences of a specified value in a cell-stack of rasters.
+"GIS Analysis/Overlay Tools
+",difference,"Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features."
+"GIS Analysis/Overlay Tools
+",erase,"Removes all the features, or parts of features, that overlap with the features of the erase vector polygon."
+"GIS Analysis/Overlay Tools
+",erase_polygon_from_raster,Erases (cuts out) a vector polygon from a raster.
+"GIS Analysis/Overlay Tools
+",highest_position,Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.
+"GIS Analysis/Overlay Tools
+",intersect,Identifies the parts of features in common between two input vector layers.
+"GIS Analysis/Overlay Tools
+",line_intersections,Identifies points where the features of two vector line layers intersect.
+"GIS Analysis/Overlay Tools
+",lowest_position,Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.
+"GIS Analysis/Overlay Tools
+",max_absolute_overlay,Evaluates the maximum absolute value for each grid cell from a stack of input rasters.
+"GIS Analysis/Overlay Tools
+",max_overlay,Evaluates the maximum value for each grid cell from a stack of input rasters.
+"GIS Analysis/Overlay Tools
+",merge_line_segments,Merges vector line segments into larger features.
+"GIS Analysis/Overlay Tools
+",min_absolute_overlay,Evaluates the minimum absolute value for each grid cell from a stack of input rasters.
+"GIS Analysis/Overlay Tools
+",min_overlay,Evaluates the minimum value for each grid cell from a stack of input rasters.
+"GIS Analysis/Overlay Tools
+",multiply_overlay,Calculates the sum for each grid cell from a group of raster images.
+"GIS Analysis/Overlay Tools
+",percent_equal_to,Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.
+"GIS Analysis/Overlay Tools
+",percent_greater_than,Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
+"GIS Analysis/Overlay Tools
+",percent_less_than,Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.
+"GIS Analysis/Overlay Tools
+",pick_from_list,Outputs the value from a raster stack specified by a position raster.
+"GIS Analysis/Overlay Tools
+",polygonize,Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.
+"GIS Analysis/Overlay Tools
+",split_with_lines,Splits the lines or polygons in one layer using the lines in another layer.
+"GIS Analysis/Overlay Tools
+",sum_overlay,Calculates the sum for each grid cell from a group of raster images.
+"GIS Analysis/Overlay Tools
+",symmetrical_difference,"Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features."
+"GIS Analysis/Overlay Tools
+",union,"Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers."
+"GIS Analysis/Overlay Tools
+",update_nodata_cells,Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.
+"GIS Analysis/Overlay Tools
+",weighted_overlay,Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).
+"GIS Analysis/Overlay Tools
+",weighted_sum,Performs a weighted-sum overlay on multiple input raster images.
+"GIS Analysis/Patch Shape Tools
+",boundary_shape_complexity,Calculates the complexity of the boundaries of raster polygons.
+"GIS Analysis/Patch Shape Tools
+",compactness_ratio,"Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons."
+"GIS Analysis/Patch Shape Tools
+",deviation_from_regional_direction,Calculates the deviation of vector polygons from the regional average direction.
+"GIS Analysis/Patch Shape Tools
+",edge_proportion,Calculate the proportion of cells in a raster polygon that are edge cells.
+"GIS Analysis/Patch Shape Tools
+",elongation_ratio,Calculates the elongation ratio for vector polygons.
+"GIS Analysis/Patch Shape Tools
+",find_patch_or_class_edge_cells,Finds all cells located on the edge of patch or class features.
+"GIS Analysis/Patch Shape Tools
+",hole_proportion,Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull.
+"GIS Analysis/Patch Shape Tools
+",linearity_index,Calculates the linearity index for vector polygons.
+"GIS Analysis/Patch Shape Tools
+",narrowness_index,Calculates the narrowness of raster polygons.
+"GIS Analysis/Patch Shape Tools
+",patch_orientation,Calculates the orientation of vector polygons.
+"GIS Analysis/Patch Shape Tools
+",perimeter_area_ratio,Calculates the perimeter-area ratio of vector polygons.
+"GIS Analysis/Patch Shape Tools
+",radius_of_gyration,Calculates the distance of cells from their polygon's centroid.
+"GIS Analysis/Patch Shape Tools
+",related_circumscribing_circle,Calculates the related circumscribing circle of vector polygons.
+"GIS Analysis/Patch Shape Tools
+",shape_complexity_index,Calculates overall polygon shape complexity or irregularity.
+"GIS Analysis/Patch Shape Tools
+",shape_complexity_index_raster,Calculates the complexity of raster polygons or classes.
+"Geomorphometric Analysis
+",aspect,Calculates an aspect raster from an input DEM.
+"Geomorphometric Analysis
+",average_normal_vector_angular_deviation,Calculates the circular variance of aspect at a scale for a DEM.
+"Geomorphometric Analysis
+",circular_variance_of_aspect,Calculates the circular variance of aspect at a scale for a DEM.
+"Geomorphometric Analysis
+",contours_from_points,Creates a contour coverage from a set of input points.
+"Geomorphometric Analysis
+",contours_from_raster,Derives a vector contour coverage from a raster surface.
+"Geomorphometric Analysis
+",convergence_index,Calculates Qin et al. (2007) flow accumulation.
+"Geomorphometric Analysis
+",dev_from_mean_elev,Calculates deviation from mean elevation.
+"Geomorphometric Analysis
+",diff_from_mean_elev,Calculates difference from mean elevation (equivalent to a high-pass filter).
+"Geomorphometric Analysis
+",directional_relief,Calculates relief for cells in an input DEM for a specified direction.
+"Geomorphometric Analysis
+",downslope_index,Calculates the Hjerdt et al. (2004) downslope index.
+"Geomorphometric Analysis
+",edge_density,"Calculates the density of edges, or breaks-in-slope within DEMs."
+"Geomorphometric Analysis
+",elev_above_pit,Calculate the elevation of each grid cell above the nearest downstream pit cell or grid edge cell.
+"Geomorphometric Analysis
+",elev_percentile,Calculates the elevation percentile raster from a DEM.
+"Geomorphometric Analysis
+",elev_relative_to_min_max,Calculates the elevation of a location relative to the minimum and maximum elevations in a DEM.
+"Geomorphometric Analysis
+",elev_relative_to_watershed_min_max,Calculates the elevation of a location relative to the minimum and maximum elevations in a watershed.
+"Geomorphometric Analysis
+",embankment_mapping,Maps and/or removes road embankments from an input fine-resolution DEM.
+"Geomorphometric Analysis
+",exposure_towards_wind_flux,Evaluates hydrologic connectivity within a DEM
+"Geomorphometric Analysis
+",feature_preserving_smoothing,Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm.
+"Geomorphometric Analysis
+",fetch_analysis,Performs an analysis of fetch or upwind distance to an obstacle.
+"Geomorphometric Analysis
+",fill_missing_data,Fills NoData holes in a DEM.
+"Geomorphometric Analysis
+",find_ridges,Identifies potential ridge and peak grid cells.
+"Geomorphometric Analysis
+",gaussian_curvature,Calculates a mean curvature raster from an input DEM.
+"Geomorphometric Analysis
+",gaussian_scale_space,Uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.
+"Geomorphometric Analysis
+",geomorphons,Computes geomorphon patterns.
+"Geomorphometric Analysis
+",hillshade,Calculates a hillshade raster from an input DEM.
+"Geomorphometric Analysis
+",horizon_angle,Calculates horizon angle (maximum upwind slope) for each grid cell in an input DEM.
+"Geomorphometric Analysis
+",hypsometric_analysis,Calculates a hypsometric curve for one or more DEMs.
+"Geomorphometric Analysis
+",hypsometrically_tinted_hillshade,Creates an colour shaded relief image from an input DEM.
+"Geomorphometric Analysis
+",local_quadratic_regression,An implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
+"Geomorphometric Analysis
+",map_off_terrain_objects,Maps off-terrain objects in a digital elevation model (DEM).
+"Geomorphometric Analysis
+",max_anisotropy_dev,Calculates the maximum anisotropy (directionality) in elevation deviation over a range of spatial scales.
+"Geomorphometric Analysis
+",max_anisotropy_dev_signature,Calculates the anisotropy in deviation from mean for points over a range of spatial scales.
+"Geomorphometric Analysis
+",max_branch_length,Lindsay and Seibert's (2013) branch length index is used to map drainage divides or ridge lines.
+"Geomorphometric Analysis
+",max_difference_from_mean,Calculates the maximum difference from mean elevation over a range of spatial scales.
+"Geomorphometric Analysis
+",max_downslope_elev_change,Calculates the maximum downslope change in elevation between a grid cell and its eight downslope neighbors.
+"Geomorphometric Analysis
+",max_elev_dev_signature,Calculates the maximum elevation deviation over a range of spatial scales and for a set of points.
+"Geomorphometric Analysis
+",max_elevation_deviation,Calculates the maximum elevation deviation over a range of spatial scales.
+"Geomorphometric Analysis
+",max_upslope_elev_change,Calculates the maximum upslope change in elevation between a grid cell and its eight downslope neighbors.
+"Geomorphometric Analysis
+",maximal_curvature,Calculates a mean curvature raster from an input DEM.
+"Geomorphometric Analysis
+",mean_curvature,Calculates a mean curvature raster from an input DEM.
+"Geomorphometric Analysis
+",min_downslope_elev_change,Calculates the minimum downslope change in elevation between a grid cell and its eight downslope neighbors.
+"Geomorphometric Analysis
+",minimal_curvature,Calculates a mean curvature raster from an input DEM.
+"Geomorphometric Analysis
+",multidirectional_hillshade,Calculates a multi-direction hillshade raster from an input DEM.
+"Geomorphometric Analysis
+",multiscale_elevation_percentile,Calculates surface roughness over a range of spatial scales.
+"Geomorphometric Analysis
+",multiscale_roughness,Calculates surface roughness over a range of spatial scales.
+"Geomorphometric Analysis
+",multiscale_roughness_signature,Calculates the surface roughness for points over a range of spatial scales.
+"Geomorphometric Analysis
+",multiscale_std_dev_normals,Calculates surface roughness over a range of spatial scales.
+"Geomorphometric Analysis
+",multiscale_std_dev_normals_signature,Calculates the surface roughness for points over a range of spatial scales.
+"Geomorphometric Analysis
+",multiscale_topographic_position_image,Creates a multiscale topographic position image from three DEVmax rasters of differing spatial scale ranges.
+"Geomorphometric Analysis
+",num_downslope_neighbours,Calculates the number of downslope neighbours to each grid cell in a DEM.
+"Geomorphometric Analysis
+",num_upslope_neighbours,Calculates the number of upslope neighbours to each grid cell in a DEM.
+"Geomorphometric Analysis
+",pennock_landform_class,"Classifies hillslope zones based on slope, profile curvature, and plan curvature."
+"Geomorphometric Analysis
+",percent_elev_range,Calculates percent of elevation range from a DEM.
+"Geomorphometric Analysis
+",plan_curvature,Calculates a plan (contour) curvature raster from an input DEM.
+"Geomorphometric Analysis
+",profile,Plots profiles from digital surface models.
+"Geomorphometric Analysis
+",profile_curvature,Calculates a profile curvature raster from an input DEM.
+"Geomorphometric Analysis
+",relative_aspect,Calculates relative aspect (relative to a user-specified direction) from an input DEM.
+"Geomorphometric Analysis
+",relative_topographic_position,Calculates the relative topographic position index from a DEM.
+"Geomorphometric Analysis
+",remove_off_terrain_objects,Removes off-terrain objects from a raster digital elevation model (DEM).
+"Geomorphometric Analysis
+",ruggedness_index,Calculates the Riley et al.'s (1999) terrain ruggedness index from an input DEM.
+"Geomorphometric Analysis
+",sediment_transport_index,Calculates the sediment transport index.
+"Geomorphometric Analysis
+",slope,Calculates a slope raster from an input DEM.
+"Geomorphometric Analysis
+",slope_vs_elevation_plot,Creates a slope vs. elevation plot for one or more DEMs.
+"Geomorphometric Analysis
+",spherical_std_dev_of_normals,Calculates the spherical standard deviation of surface normals for a DEM.
+"Geomorphometric Analysis
+",standard_deviation_of_slope,Calculates the standard deviation of slope from an input DEM.
+"Geomorphometric Analysis
+",stream_power_index,Calculates the relative stream power index.
+"Geomorphometric Analysis
+",surface_area_ratio,Calculates a the surface area ratio of each grid cell in an input DEM.
+"Geomorphometric Analysis
+",tangential_curvature,Calculates a tangential curvature raster from an input DEM.
+"Geomorphometric Analysis
+",time_in_daylight,Calculates the proportion of time a location is not within an area of shadow.
+"Geomorphometric Analysis
+",topographic_hachures,Derives topographic hachures from a raster surface.
+"Geomorphometric Analysis
+",total_curvature,Calculates a total curvature raster from an input DEM.
+"Geomorphometric Analysis
+",viewshed,Identifies the viewshed for a point or set of points.
+"Geomorphometric Analysis
+",visibility_index,Estimates the relative visibility of sites in a DEM.
+"Geomorphometric Analysis
+",wetness_index,"Calculates the topographic wetness index, Ln(A / tan(slope))."
+"Hydrological Analysis
+",average_flowpath_slope,Measures the average slope gradient from each grid cell to all upslope divide cells.
+"Hydrological Analysis
+",average_upslope_flowpath_length,Measures the average length of all upslope flowpaths draining each grid cell.
+"Hydrological Analysis
+",basins,Identifies drainage basins that drain to the DEM edge.
+"Hydrological Analysis
+",breach_depressions,Breaches all of the depressions in a DEM using Lindsay's (2016) algorithm. This should be preferred over depression filling in most cases.
+"Hydrological Analysis
+",breach_depressions_least_cost,Breaches the depressions in a DEM using a least-cost pathway method.
+"Hydrological Analysis
+",breach_single_cell_pits,Removes single-cell pits from an input DEM by breaching.
+"Hydrological Analysis
+",burn_streams_at_roads,Burns-in streams at the sites of road embankments.
+"Hydrological Analysis
+",d8_flow_accumulation,Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
+"Hydrological Analysis
+",d8_mass_flux,Performs a D8 mass flux calculation.
+"Hydrological Analysis
+",d8_pointer,Calculates a D8 flow pointer raster from an input DEM.
+"Hydrological Analysis
+",d_inf_flow_accumulation,Calculates a D-infinity flow accumulation raster from an input DEM.
+"Hydrological Analysis
+",d_inf_mass_flux,Performs a D-infinity mass flux calculation.
+"Hydrological Analysis
+",d_inf_pointer,Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.
+"Hydrological Analysis
+",depth_in_sink,Measures the depth of sinks (depressions) in a DEM.
+"Hydrological Analysis
+",downslope_distance_to_stream,Measures distance to the nearest downslope stream cell.
+"Hydrological Analysis
+",downslope_flowpath_length,Calculates the downslope flowpath length from each cell to basin outlet.
+"Hydrological Analysis
+",edge_contamination,Identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
+"Hydrological Analysis
+",elevation_above_stream,Calculates the elevation of cells above the nearest downslope stream cell.
+"Hydrological Analysis
+",elevation_above_stream_euclidean,Calculates the elevation of cells above the nearest (Euclidean distance) stream cell.
+"Hydrological Analysis
+",fd8_flow_accumulation,Calculates an FD8 flow accumulation raster from an input DEM.
+"Hydrological Analysis
+",fd8_pointer,Calculates an FD8 flow pointer raster from an input DEM.
+"Hydrological Analysis
+",fill_burn,"Burns streams into a DEM using the FillBurn (Saunders, 1999) method."
+"Hydrological Analysis
+",fill_depressions,Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases.
+"Hydrological Analysis
+",fill_depressions_planchon_and_darboux,Fills all of the depressions in a DEM using the Planchon and Darboux (2002) method.
+"Hydrological Analysis
+",fill_depressions_wang_and_liu,Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases.
+"Hydrological Analysis
+",fill_single_cell_pits,Raises pit cells to the elevation of their lowest neighbour.
+"Hydrological Analysis
+",find_no_flow_cells,Finds grid cells with no downslope neighbours.
+"Hydrological Analysis
+",find_parallel_flow,Finds areas of parallel flow in D8 flow direction rasters.
+"Hydrological Analysis
+",flatten_lakes,Flattens lake polygons in a raster DEM.
+"Hydrological Analysis
+",flood_order,"Assigns each DEM grid cell its order in the sequence of inundations that are encountered during a search starting from the edges, moving inward at increasing elevations."
+"Hydrological Analysis
+",flow_accumulation_full_workflow,"Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster."
+"Hydrological Analysis
+",flow_length_diff,"Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges."
+"Hydrological Analysis
+",hillslopes,Identifies the individual hillslopes draining to each link in a stream network.
+"Hydrological Analysis
+",impoundment_size_index,Calculates the impoundment size resulting from damming a DEM.
+"Hydrological Analysis
+",insert_dams,Calculates the impoundment size resulting from damming a DEM.
+"Hydrological Analysis
+",isobasins,Divides a landscape into nearly equal sized drainage basins (i.e. watersheds).
+"Hydrological Analysis
+",jenson_snap_pour_points,Moves outlet points used to specify points of interest in a watershedding operation to the nearest stream cell.
+"Hydrological Analysis
+",longest_flowpath,Delineates the longest flowpaths for a group of subbasins or watersheds.
+"Hydrological Analysis
+",max_upslope_flowpath_length,Measures the maximum length of all upslope flowpaths draining each grid cell.
+"Hydrological Analysis
+",max_upslope_value,Calculates the maximum upslope value from an input values raster along flowpaths.
+"Hydrological Analysis
+",md_inf_flow_accumulation,Calculates an FD8 flow accumulation raster from an input DEM.
+"Hydrological Analysis
+",num_inflowing_neighbours,Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.
+"Hydrological Analysis
+",qin_flow_accumulation,Calculates Qin et al. (2007) flow accumulation.
+"Hydrological Analysis
+",quinn_flow_accumulation,Calculates Quinn et al. (1995) flow accumulation.
+"Hydrological Analysis
+",raise_walls,"Raises walls in a DEM along a line or around a polygon, e.g. a watershed."
+"Hydrological Analysis
+",rho8_flow_accumulation,Calculates Fairfield and Leymarie (1991) flow accumulation.
+"Hydrological Analysis
+",rho8_pointer,Calculates a stochastic Rho8 flow pointer raster from an input DEM.
+"Hydrological Analysis
+",sink,"Identifies the depressions in a DEM, giving each feature a unique identifier."
+"Hydrological Analysis
+",snap_pour_points,Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.
+"Hydrological Analysis
+",stochastic_depression_analysis,Performs a stochastic analysis of depressions within a DEM.
+"Hydrological Analysis
+",strahler_order_basins,Identifies Strahler-order basins from an input stream network.
+"Hydrological Analysis
+",subbasins,"Identifies the catchments, or sub-basin, draining to each link in a stream network."
+"Hydrological Analysis
+",trace_downslope_flowpaths,Traces downslope flowpaths from one or more target sites (i.e. seed points).
+"Hydrological Analysis
+",unnest_basins,Extract whole watersheds for a set of outlet points.
+"Hydrological Analysis
+",upslope_depression_storage,Estimates the average upslope depression storage depth.
+"Hydrological Analysis
+",watershed,"Identifies the watershed, or drainage basin, draining to a set of target cells."
+"Image Processing Tools
+",change_vector_analysis,Performs a change vector analysis on a two-date multi-spectral dataset.
+"Image Processing Tools
+",closing,A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.
+"Image Processing Tools
+",create_colour_composite,Creates a colour-composite image from three bands of multispectral imagery.
+"Image Processing Tools
+",flip_image,Reflects an image in the vertical or horizontal axis.
+"Image Processing Tools
+",ihs_to_rgb,"Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images."
+"Image Processing Tools
+",image_stack_profile,Plots an image stack profile (i.e. signature) for a set of points and multispectral images.
+"Image Processing Tools
+",integral_image,Transforms an input image (summed area table) into its integral image equivalent.
+"Image Processing Tools
+",line_thinning,Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
+"Image Processing Tools
+",mosaic,Mosaics two or more images together.
+"Image Processing Tools
+",mosaic_with_feathering,Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.
+"Image Processing Tools
+",normalized_difference_index,Calculate a normalized-difference index (NDI) from two bands of multispectral image data.
+"Image Processing Tools
+",opening,An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.
+"Image Processing Tools
+",otsu_thresholding,Applies Ostu's method for optimal binary thresholding of a continuous image.
+"Image Processing Tools
+",remove_spurs,Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
+"Image Processing Tools
+",resample,Resamples one or more input images into a destination image.
+"Image Processing Tools
+",rgb_to_ihs,"Converts red, green, and blue (RGB) images into intensity, hue, and saturation (IHS) images."
+"Image Processing Tools
+",split_colour_composite,Splits an RGB colour composite image into separate multispectral images.
+"Image Processing Tools
+",thicken_raster_line,Thickens single-cell wide lines within a raster image.
+"Image Processing Tools
+",tophat_transform,Performs either a white or black top-hat transform on an input image.
+"Image Processing Tools
+",write_function_memory_insertion,Performs a write function memory insertion for single-band multi-date change detection.
+"Image Processing Tools/Filters
+",adaptive_filter,Performs an adaptive filter on an image.
+"Image Processing Tools/Filters
+",bilateral_filter,A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).
+"Image Processing Tools/Filters
+",conservative_smoothing_filter,Performs a conservative-smoothing filter on an image.
+"Image Processing Tools/Filters
+",corner_detection,Identifies corner patterns in boolean images using hit-and-miss pattern matching.
+"Image Processing Tools/Filters
+",diff_of_gaussian_filter,Performs a Difference of Gaussian (DoG) filter on an image.
+"Image Processing Tools/Filters
+",diversity_filter,Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
+"Image Processing Tools/Filters
+",edge_preserving_mean_filter,Performs a simple edge-preserving mean filter on an input image.
+"Image Processing Tools/Filters
+",emboss_filter,"Performs an emboss filter on an image, similar to a hillshade operation."
+"Image Processing Tools/Filters
+",fast_almost_gaussian_filter,Performs a fast approximate Gaussian filter on an image.
+"Image Processing Tools/Filters
+",gaussian_filter,Performs a Gaussian filter on an image.
+"Image Processing Tools/Filters
+",high_pass_bilateral_filter,"Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998)."
+"Image Processing Tools/Filters
+",high_pass_filter,Performs a high-pass filter on an input image.
+"Image Processing Tools/Filters
+",high_pass_median_filter,Performs a high pass median filter on an input image.
+"Image Processing Tools/Filters
+",k_nearest_mean_filter,A k-nearest mean filter is a type of edge-preserving smoothing filter.
+"Image Processing Tools/Filters
+",laplacian_filter,Performs a Laplacian filter on an image.
+"Image Processing Tools/Filters
+",laplacian_of_gaussian_filter,Performs a Laplacian-of-Gaussian (LoG) filter on an image.
+"Image Processing Tools/Filters
+",lee_sigma_filter,Performs a Lee (Sigma) smoothing filter on an image.
+"Image Processing Tools/Filters
+",line_detection_filter,Performs a line-detection filter on an image.
+"Image Processing Tools/Filters
+",majority_filter,Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
+"Image Processing Tools/Filters
+",maximum_filter,Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
+"Image Processing Tools/Filters
+",mean_filter,Performs a mean filter (low-pass filter) on an input image.
+"Image Processing Tools/Filters
+",median_filter,Performs a median filter on an input image.
+"Image Processing Tools/Filters
+",minimum_filter,Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
+"Image Processing Tools/Filters
+",olympic_filter,Performs an olympic smoothing filter on an image.
+"Image Processing Tools/Filters
+",percentile_filter,Performs a percentile filter on an input image.
+"Image Processing Tools/Filters
+",prewitt_filter,Performs a Prewitt edge-detection filter on an image.
+"Image Processing Tools/Filters
+",range_filter,Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
+"Image Processing Tools/Filters
+",roberts_cross_filter,Performs a Robert's cross edge-detection filter on an image.
+"Image Processing Tools/Filters
+",scharr_filter,Performs a Scharr edge-detection filter on an image.
+"Image Processing Tools/Filters
+",sobel_filter,Performs a Sobel edge-detection filter on an image.
+"Image Processing Tools/Filters
+",standard_deviation_filter,Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
+"Image Processing Tools/Filters
+",total_filter,Performs a total filter on an input image.
+"Image Processing Tools/Filters
+",unsharp_masking,An image sharpening technique that enhances edges.
+"Image Processing Tools/Filters
+",user_defined_weights_filter,Performs a user-defined weights filter on an image.
+"Image Processing Tools/Image Enhancement
+",balance_contrast_enhancement,Performs a balance contrast enhancement on a colour-composite image of multispectral data.
+"Image Processing Tools/Image Enhancement
+",correct_vignetting,Corrects the darkening of images towards corners.
+"Image Processing Tools/Image Enhancement
+",direct_decorrelation_stretch,Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data.
+"Image Processing Tools/Image Enhancement
+",gamma_correction,Performs a gamma correction on an input images.
+"Image Processing Tools/Image Enhancement
+",gaussian_contrast_stretch,Performs a Gaussian contrast stretch on input images.
+"Image Processing Tools/Image Enhancement
+",histogram_equalization,Performs a histogram equalization contrast enhancement on an image.
+"Image Processing Tools/Image Enhancement
+",histogram_matching,Alters the statistical distribution of a raster image matching it to a specified PDF.
+"Image Processing Tools/Image Enhancement
+",histogram_matching_two_images,Alters the cumulative distribution function of a raster image to that of another image.
+"Image Processing Tools/Image Enhancement
+",min_max_contrast_stretch,Performs a min-max contrast stretch on an input greytone image.
+"Image Processing Tools/Image Enhancement
+",panchromatic_sharpening,Increases the spatial resolution of image data by combining multispectral bands with panchromatic data.
+"Image Processing Tools/Image Enhancement
+",percentage_contrast_stretch,Performs a percentage linear contrast stretch on input images.
+"Image Processing Tools/Image Enhancement
+",sigmoidal_contrast_stretch,Performs a sigmoidal contrast stretch on input images.
+"Image Processing Tools/Image Enhancement
+",standard_deviation_contrast_stretch,Performs a standard-deviation contrast stretch on input images.
+"LiDAR Tools
+",ascii_to_las,Converts one or more ASCII files containing LiDAR points into LAS files.
+"LiDAR Tools
+",classify_buildings_in_lidar,Reclassifies a LiDAR points that lie within vector building footprints.
+"LiDAR Tools
+",classify_overlap_points,Classifies or filters LAS points in regions of overlapping flight lines.
+"LiDAR Tools
+",clip_lidar_to_polygon,Clips a LiDAR point cloud to a vector polygon or polygons.
+"LiDAR Tools
+",erase_polygon_from_lidar,Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud.
+"LiDAR Tools
+",filter_lidar_classes,Removes points in a LAS file with certain specified class values.
+"LiDAR Tools
+",filter_lidar_scan_angles,Removes points in a LAS file with scan angles greater than a threshold.
+"LiDAR Tools
+",find_flightline_edge_points,Identifies points along a flightline's edge in a LAS file.
+"LiDAR Tools
+",flightline_overlap,Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight-lines in each grid cell.
+"LiDAR Tools
+",height_above_ground,"Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point."
+"LiDAR Tools
+",individual_tree_detection,Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
+"LiDAR Tools
+",las_to_ascii,Converts one or more LAS files into ASCII text files.
+"LiDAR Tools
+",las_to_multipoint_shapefile,"Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory."
+"LiDAR Tools
+",las_to_shapefile,Converts one or more LAS files into a vector Shapefile of POINT ShapeType.
+"LiDAR Tools
+",las_to_zlidar,Converts one or more LAS files into the zlidar compressed LiDAR data format.
+"LiDAR Tools
+",lidar_block_maximum,"Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory."
+"LiDAR Tools
+",lidar_block_minimum,"Creates a block-minimum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory."
+"LiDAR Tools
+",lidar_classify_subset,Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
+"LiDAR Tools
+",lidar_colourize,Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.
+"LiDAR Tools
+",lidar_digital_surface_model,Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.
+"LiDAR Tools
+",lidar_elevation_slice,Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.
+"LiDAR Tools
+",lidar_ground_point_filter,Identifies ground points within LiDAR dataset using a slope-based method.
+"LiDAR Tools
+",lidar_hex_binning,Hex-bins a set of LiDAR points.
+"LiDAR Tools
+",lidar_hillshade,Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.
+"LiDAR Tools
+",lidar_histogram,Creates a histogram of LiDAR data.
+"LiDAR Tools
+",lidar_idw_interpolation,"Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory."
+"LiDAR Tools
+",lidar_info,"Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys."
+"LiDAR Tools
+",lidar_join,Joins multiple LiDAR (LAS) files into a single LAS file.
+"LiDAR Tools
+",lidar_kappa_index,Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.
+"LiDAR Tools
+",lidar_nearest_neighbour_gridding,"Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory."
+"LiDAR Tools
+",lidar_point_density,"Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory."
+"LiDAR Tools
+",lidar_point_stats,"Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory."
+"LiDAR Tools
+",lidar_ransac_planes,Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.
+"LiDAR Tools
+",lidar_rbf_interpolation,"Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory."
+"LiDAR Tools
+",lidar_remove_duplicates,Removes duplicate points from a LiDAR data set.
+"LiDAR Tools
+",lidar_remove_outliers,Removes outliers (high and low points) in a LiDAR point cloud.
+"LiDAR Tools
+",lidar_rooftop_analysis,Identifies roof segments in a LiDAR point cloud.
+"LiDAR Tools
+",lidar_segmentation,Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.
+"LiDAR Tools
+",lidar_segmentation_based_filter,Identifies ground points within LiDAR point clouds using a segmentation based approach.
+"LiDAR Tools
+",lidar_shift,"Shifts the x,y,z coordinates of a LiDAR file."
+"LiDAR Tools
+",lidar_thin,"Thins a LiDAR point cloud, reducing point density."
+"LiDAR Tools
+",lidar_thin_high_density,Thins points from high density areas within a LiDAR point cloud.
+"LiDAR Tools
+",lidar_tile,Tiles a LiDAR LAS file into multiple LAS files.
+"LiDAR Tools
+",lidar_tile_footprint,"Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory."
+"LiDAR Tools
+",lidar_tin_gridding,Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points.
+"LiDAR Tools
+",lidar_tophat_transform,"Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy."
+"LiDAR Tools
+",normal_vectors,Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
+"LiDAR Tools
+",normalize_lidar,Normalizes a LiDAR point cloud.
+"LiDAR Tools
+",select_tiles_by_polygon,Copies LiDAR tiles overlapping with a polygon into an output directory.
+"LiDAR Tools
+",zlidar_to_las,Converts one or more zlidar files into the LAS data format.
+"Machine Learning
+",k_means_clustering,Performs a k-means clustering operation on a multi-spectral dataset.
+"Machine Learning
+",modified_k_means_clustering,Performs a modified k-means clustering operation on a multi-spectral dataset.
+"Math and Stats Tools
+",absolute_value,Calculates the absolute value of every cell in a raster.
+"Math and Stats Tools
+",add,Performs an addition operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",and,Performs a logical AND operator on two Boolean raster images.
+"Math and Stats Tools
+",anova,Performs an analysis of variance (ANOVA) test on a raster dataset.
+"Math and Stats Tools
+",arc_cos,Returns the inverse cosine (arccos) of each values in a raster.
+"Math and Stats Tools
+",arc_sin,Returns the inverse sine (arcsin) of each values in a raster.
+"Math and Stats Tools
+",arc_tan,Returns the inverse tangent (arctan) of each values in a raster.
+"Math and Stats Tools
+",arcosh,Returns the inverse hyperbolic cosine (arcosh) of each values in a raster.
+"Math and Stats Tools
+",arsinh,Returns the inverse hyperbolic sine (arsinh) of each values in a raster.
+"Math and Stats Tools
+",artanh,Returns the inverse hyperbolic tangent (arctanh) of each values in a raster.
+"Math and Stats Tools
+",atan2,Returns the 2-argument inverse tangent (atan2).
+"Math and Stats Tools
+",attribute_correlation,Performs a correlation analysis on attribute fields from a vector database.
+"Math and Stats Tools
+",attribute_correlation_neighbourhood_analysis,Performs a correlation on two input vector attributes within a neighbourhood search windows.
+"Math and Stats Tools
+",attribute_histogram,Creates a histogram for the field values of a vector's attribute table.
+"Math and Stats Tools
+",attribute_scattergram,Creates a scattergram for two field values of a vector's attribute table.
+"Math and Stats Tools
+",ceil,Returns the smallest (closest to negative infinity) value that is greater than or equal to the values in a raster.
+"Math and Stats Tools
+",conditional_evaluation,Performs a conditional evaluation (if-then-else) operation on a raster.
+"Math and Stats Tools
+",conditioned_latin_hypercube,Implements conditioned Latin Hypercube sampling.
+"Math and Stats Tools
+",cos,Returns the cosine (cos) of each values in a raster.
+"Math and Stats Tools
+",cosh,Returns the hyperbolic cosine (cosh) of each values in a raster.
+"Math and Stats Tools
+",crispness_index,"Calculates the Crispness Index, which is used to quantify how crisp (or conversely how fuzzy) a probability image is."
+"Math and Stats Tools
+",cross_tabulation,Performs a cross-tabulation on two categorical images.
+"Math and Stats Tools
+",cumulative_distribution,Converts a raster image to its cumulative distribution function.
+"Math and Stats Tools
+",decrement,Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract).
+"Math and Stats Tools
+",divide,Performs a division operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",equal_to,Performs a equal-to comparison operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",exp,Returns the exponential (base e) of values in a raster.
+"Math and Stats Tools
+",exp2,Returns the exponential (base 2) of values in a raster.
+"Math and Stats Tools
+",floor,Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.
+"Math and Stats Tools
+",greater_than,Performs a greater-than comparison operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",image_autocorrelation,Performs Moran's I analysis on two or more input images.
+"Math and Stats Tools
+",image_correlation,Performs image correlation on two or more input images.
+"Math and Stats Tools
+",image_correlation_neighbourhood_analysis,Performs image correlation on two input images neighbourhood search windows.
+"Math and Stats Tools
+",image_regression,Performs image regression analysis on two input images.
+"Math and Stats Tools
+",in_place_add,Performs an in-place addition operation (input1 += input2).
+"Math and Stats Tools
+",in_place_divide,Performs an in-place division operation (input1 /= input2).
+"Math and Stats Tools
+",in_place_multiply,Performs an in-place multiplication operation (input1 *= input2).
+"Math and Stats Tools
+",in_place_subtract,Performs an in-place subtraction operation (input1 -= input2).
+"Math and Stats Tools
+",increment,Increases the values of each grid cell in an input raster by 1.0. (see also InPlaceAdd)
+"Math and Stats Tools
+",integer_division,Performs an integer division operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",is_no_data,Identifies NoData valued pixels in an image.
+"Math and Stats Tools
+",kappa_index,Performs a kappa index of agreement (KIA) analysis on two categorical raster files.
+"Math and Stats Tools
+",ks_test_for_normality,Evaluates whether the values in a raster are normally distributed.
+"Math and Stats Tools
+",less_than,Performs a less-than comparison operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",list_unique_values,Lists the unique values contained in a field within a vector's attribute table.
+"Math and Stats Tools
+",list_unique_values_raster,Lists the unique values contained in a field within a vector's attribute table.
+"Math and Stats Tools
+",ln,Returns the natural logarithm of values in a raster.
+"Math and Stats Tools
+",log10,Returns the base-10 logarithm of values in a raster.
+"Math and Stats Tools
+",log2,Returns the base-2 logarithm of values in a raster.
+"Math and Stats Tools
+",max,Performs a MAX operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",min,Performs a MIN operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",modulo,Performs a modulo operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",multiply,Performs a multiplication operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",negate,Changes the sign of values in a raster or the 0-1 values of a Boolean raster.
+"Math and Stats Tools
+",not,Performs a logical NOT operator on two Boolean raster images.
+"Math and Stats Tools
+",not_equal_to,Performs a not-equal-to comparison operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",or,Performs a logical OR operator on two Boolean raster images.
+"Math and Stats Tools
+",paired_sample_t_test,Performs a 2-sample K-S test for significant differences on two input rasters.
+"Math and Stats Tools
+",power,"Raises the values in grid cells of one rasters, or a constant value, by values in another raster or constant value."
+"Math and Stats Tools
+",principal_component_analysis,Performs a principal component analysis (PCA) on a multi-spectral dataset.
+"Math and Stats Tools
+",quantiles,Transforms raster values into quantiles.
+"Math and Stats Tools
+",random_field,Creates an image containing random values.
+"Math and Stats Tools
+",random_sample,Creates an image containing randomly located sample grid cells with unique IDs.
+"Math and Stats Tools
+",raster_calculator,Performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.
+"Math and Stats Tools
+",raster_histogram,Creates a histogram from raster values.
+"Math and Stats Tools
+",raster_summary_stats,"Measures a rasters min, max, average, standard deviation, num. non-nodata cells, and total."
+"Math and Stats Tools
+",reciprocal,Returns the reciprocal (i.e. 1 / z) of values in a raster.
+"Math and Stats Tools
+",rescale_value_range,Performs a min-max contrast stretch on an input greytone image.
+"Math and Stats Tools
+",root_mean_square_error,Calculates the RMSE and other accuracy statistics.
+"Math and Stats Tools
+",round,Rounds the values in an input raster to the nearest integer value.
+"Math and Stats Tools
+",sin,Returns the sine (sin) of each values in a raster.
+"Math and Stats Tools
+",sinh,Returns the hyperbolic sine (sinh) of each values in a raster.
+"Math and Stats Tools
+",square,Squares the values in a raster.
+"Math and Stats Tools
+",square_root,Returns the square root of the values in a raster.
+"Math and Stats Tools
+",subtract,Performs a differencing operation on two rasters or a raster and a constant value.
+"Math and Stats Tools
+",tan,Returns the tangent (tan) of each values in a raster.
+"Math and Stats Tools
+",tanh,Returns the hyperbolic tangent (tanh) of each values in a raster.
+"Math and Stats Tools
+",to_degrees,Converts a raster from radians to degrees.
+"Math and Stats Tools
+",to_radians,Converts a raster from degrees to radians.
+"Math and Stats Tools
+",trend_surface,Estimates the trend surface of an input raster file.
+"Math and Stats Tools
+",trend_surface_vector_points,Estimates a trend surface from vector points.
+"Math and Stats Tools
+",truncate,Truncates the values in a raster to the desired number of decimal places.
+"Math and Stats Tools
+",turning_bands_simulation,Creates an image containing random values based on a turning-bands simulation.
+"Math and Stats Tools
+",two_sample_ks_test,Performs a 2-sample K-S test for significant differences on two input rasters.
+"Math and Stats Tools
+",wilcoxon_signed_rank_test,Performs a 2-sample K-S test for significant differences on two input rasters.
+"Math and Stats Tools
+",xor,Performs a logical XOR operator on two Boolean raster images.
+"Math and Stats Tools
+",z_scores,Standardizes the values in an input raster by converting to z-scores.
+"Math and Stats Tools
+",zonal_statistics,Extracts descriptive statistics for a group of patches in a raster.
+"Stream Network Analysis
+",correct_stream_vector_direction,This tool resolves directional errors in digitized vector streams.
+"Stream Network Analysis
+",distance_to_outlet,Calculates the distance of stream grid cells to the channel network outlet cell.
+"Stream Network Analysis
+",extract_streams,Extracts stream grid cells from a flow accumulation raster.
+"Stream Network Analysis
+",extract_valleys,Identifies potential valley bottom grid cells based on local topolography alone.
+"Stream Network Analysis
+",farthest_channel_head,Calculates the distance to the furthest upstream channel head for each stream cell.
+"Stream Network Analysis
+",find_main_stem,"Finds the main stem, based on stream lengths, of each stream network."
+"Stream Network Analysis
+",hack_stream_order,Assigns the Hack stream order to each tributary in a stream network.
+"Stream Network Analysis
+",horton_stream_order,Assigns the Horton stream order to each tributary in a stream network.
+"Stream Network Analysis
+",length_of_upstream_channels,Calculates the total length of channels upstream.
+"Stream Network Analysis
+",long_profile,Plots the stream longitudinal profiles for one or more rivers.
+"Stream Network Analysis
+",long_profile_from_points,Plots the longitudinal profiles from flow-paths initiating from a set of vector points.
+"Stream Network Analysis
+",raster_streams_to_vector,Converts a raster stream file into a vector file.
+"Stream Network Analysis
+",rasterize_streams,Rasterizes vector streams based on Lindsay (2016) method.
+"Stream Network Analysis
+",remove_short_streams,Removes short first-order streams from a stream network.
+"Stream Network Analysis
+",repair_stream_vector_topology,This tool resolves topological errors and inconsistencies associated with digitized vector streams.
+"Stream Network Analysis
+",shreve_stream_magnitude,Assigns the Shreve stream magnitude to each link in a stream network.
+"Stream Network Analysis
+",strahler_stream_order,Assigns the Strahler stream order to each link in a stream network.
+"Stream Network Analysis
+",stream_link_class,Identifies the exterior/interior links and nodes in a stream network.
+"Stream Network Analysis
+",stream_link_identifier,Assigns a unique identifier to each link in a stream network.
+"Stream Network Analysis
+",stream_link_length,Estimates the length of each link (or tributary) in a stream network.
+"Stream Network Analysis
+",stream_link_slope,Estimates the average slope of each link (or tributary) in a stream network.
+"Stream Network Analysis
+",stream_slope_continuous,Estimates the slope of each grid cell in a stream network.
+"Stream Network Analysis
+",topological_stream_order,Assigns each link in a stream network its topological order.
+"Stream Network Analysis
+",tributary_identifier,Assigns a unique identifier to each tributary in a stream network.
+"Stream Network Analysis
+",vector_stream_network_analysis,This tool performs common stream network analysis operations on an input vector stream file.
+"Whitebox Utilities
+",install_wb_extension,Use to install a Whitebox extension product.
+"Whitebox Utilities
+",launch_wb_runner,Opens the Whitebox Runner application.

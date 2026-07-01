@@ -1,0 +1,1968 @@
+{
+    "Math and Stats Tools\n": [
+        {
+            "tool": "absolute_value",
+            "description": "Calculates the absolute value of every cell in a raster."
+        },
+        {
+            "tool": "add",
+            "description": "Performs an addition operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "and",
+            "description": "Performs a logical AND operator on two Boolean raster images."
+        },
+        {
+            "tool": "anova",
+            "description": "Performs an analysis of variance (ANOVA) test on a raster dataset."
+        },
+        {
+            "tool": "arc_cos",
+            "description": "Returns the inverse cosine (arccos) of each values in a raster."
+        },
+        {
+            "tool": "arc_sin",
+            "description": "Returns the inverse sine (arcsin) of each values in a raster."
+        },
+        {
+            "tool": "arc_tan",
+            "description": "Returns the inverse tangent (arctan) of each values in a raster."
+        },
+        {
+            "tool": "arcosh",
+            "description": "Returns the inverse hyperbolic cosine (arcosh) of each values in a raster."
+        },
+        {
+            "tool": "arsinh",
+            "description": "Returns the inverse hyperbolic sine (arsinh) of each values in a raster."
+        },
+        {
+            "tool": "artanh",
+            "description": "Returns the inverse hyperbolic tangent (arctanh) of each values in a raster."
+        },
+        {
+            "tool": "atan2",
+            "description": "Returns the 2-argument inverse tangent (atan2)."
+        },
+        {
+            "tool": "attribute_correlation",
+            "description": "Performs a correlation analysis on attribute fields from a vector database."
+        },
+        {
+            "tool": "attribute_correlation_neighbourhood_analysis",
+            "description": "Performs a correlation on two input vector attributes within a neighbourhood search windows."
+        },
+        {
+            "tool": "attribute_histogram",
+            "description": "Creates a histogram for the field values of a vector's attribute table."
+        },
+        {
+            "tool": "attribute_scattergram",
+            "description": "Creates a scattergram for two field values of a vector's attribute table."
+        },
+        {
+            "tool": "ceil",
+            "description": "Returns the smallest (closest to negative infinity) value that is greater than or equal to the values in a raster."
+        },
+        {
+            "tool": "conditional_evaluation",
+            "description": "Performs a conditional evaluation (if-then-else) operation on a raster."
+        },
+        {
+            "tool": "conditioned_latin_hypercube",
+            "description": "Implements conditioned Latin Hypercube sampling."
+        },
+        {
+            "tool": "cos",
+            "description": "Returns the cosine (cos) of each values in a raster."
+        },
+        {
+            "tool": "cosh",
+            "description": "Returns the hyperbolic cosine (cosh) of each values in a raster."
+        },
+        {
+            "tool": "crispness_index",
+            "description": "Calculates the Crispness Index, which is used to quantify how crisp (or conversely how fuzzy) a probability image is."
+        },
+        {
+            "tool": "cross_tabulation",
+            "description": "Performs a cross-tabulation on two categorical images."
+        },
+        {
+            "tool": "cumulative_distribution",
+            "description": "Converts a raster image to its cumulative distribution function."
+        },
+        {
+            "tool": "decrement",
+            "description": "Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract)."
+        },
+        {
+            "tool": "divide",
+            "description": "Performs a division operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "equal_to",
+            "description": "Performs a equal-to comparison operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "exp",
+            "description": "Returns the exponential (base e) of values in a raster."
+        },
+        {
+            "tool": "exp2",
+            "description": "Returns the exponential (base 2) of values in a raster."
+        },
+        {
+            "tool": "floor",
+            "description": "Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster."
+        },
+        {
+            "tool": "greater_than",
+            "description": "Performs a greater-than comparison operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "image_autocorrelation",
+            "description": "Performs Moran's I analysis on two or more input images."
+        },
+        {
+            "tool": "image_correlation",
+            "description": "Performs image correlation on two or more input images."
+        },
+        {
+            "tool": "image_correlation_neighbourhood_analysis",
+            "description": "Performs image correlation on two input images neighbourhood search windows."
+        },
+        {
+            "tool": "image_regression",
+            "description": "Performs image regression analysis on two input images."
+        },
+        {
+            "tool": "in_place_add",
+            "description": "Performs an in-place addition operation (input1 += input2)."
+        },
+        {
+            "tool": "in_place_divide",
+            "description": "Performs an in-place division operation (input1 /= input2)."
+        },
+        {
+            "tool": "in_place_multiply",
+            "description": "Performs an in-place multiplication operation (input1 *= input2)."
+        },
+        {
+            "tool": "in_place_subtract",
+            "description": "Performs an in-place subtraction operation (input1 -= input2)."
+        },
+        {
+            "tool": "increment",
+            "description": "Increases the values of each grid cell in an input raster by 1.0. (see also InPlaceAdd)"
+        },
+        {
+            "tool": "integer_division",
+            "description": "Performs an integer division operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "is_no_data",
+            "description": "Identifies NoData valued pixels in an image."
+        },
+        {
+            "tool": "kappa_index",
+            "description": "Performs a kappa index of agreement (KIA) analysis on two categorical raster files."
+        },
+        {
+            "tool": "ks_test_for_normality",
+            "description": "Evaluates whether the values in a raster are normally distributed."
+        },
+        {
+            "tool": "less_than",
+            "description": "Performs a less-than comparison operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "list_unique_values",
+            "description": "Lists the unique values contained in a field within a vector's attribute table."
+        },
+        {
+            "tool": "list_unique_values_raster",
+            "description": "Lists the unique values contained in a field within a vector's attribute table."
+        },
+        {
+            "tool": "ln",
+            "description": "Returns the natural logarithm of values in a raster."
+        },
+        {
+            "tool": "log10",
+            "description": "Returns the base-10 logarithm of values in a raster."
+        },
+        {
+            "tool": "log2",
+            "description": "Returns the base-2 logarithm of values in a raster."
+        },
+        {
+            "tool": "max",
+            "description": "Performs a MAX operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "min",
+            "description": "Performs a MIN operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "modulo",
+            "description": "Performs a modulo operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "multiply",
+            "description": "Performs a multiplication operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "negate",
+            "description": "Changes the sign of values in a raster or the 0-1 values of a Boolean raster."
+        },
+        {
+            "tool": "not",
+            "description": "Performs a logical NOT operator on two Boolean raster images."
+        },
+        {
+            "tool": "not_equal_to",
+            "description": "Performs a not-equal-to comparison operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "or",
+            "description": "Performs a logical OR operator on two Boolean raster images."
+        },
+        {
+            "tool": "paired_sample_t_test",
+            "description": "Performs a 2-sample K-S test for significant differences on two input rasters."
+        },
+        {
+            "tool": "power",
+            "description": "Raises the values in grid cells of one rasters, or a constant value, by values in another raster or constant value."
+        },
+        {
+            "tool": "principal_component_analysis",
+            "description": "Performs a principal component analysis (PCA) on a multi-spectral dataset."
+        },
+        {
+            "tool": "quantiles",
+            "description": "Transforms raster values into quantiles."
+        },
+        {
+            "tool": "random_field",
+            "description": "Creates an image containing random values."
+        },
+        {
+            "tool": "random_sample",
+            "description": "Creates an image containing randomly located sample grid cells with unique IDs."
+        },
+        {
+            "tool": "raster_calculator",
+            "description": "Performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis."
+        },
+        {
+            "tool": "raster_histogram",
+            "description": "Creates a histogram from raster values."
+        },
+        {
+            "tool": "raster_summary_stats",
+            "description": "Measures a rasters min, max, average, standard deviation, num. non-nodata cells, and total."
+        },
+        {
+            "tool": "reciprocal",
+            "description": "Returns the reciprocal (i.e. 1 / z) of values in a raster."
+        },
+        {
+            "tool": "rescale_value_range",
+            "description": "Performs a min-max contrast stretch on an input greytone image."
+        },
+        {
+            "tool": "root_mean_square_error",
+            "description": "Calculates the RMSE and other accuracy statistics."
+        },
+        {
+            "tool": "round",
+            "description": "Rounds the values in an input raster to the nearest integer value."
+        },
+        {
+            "tool": "sin",
+            "description": "Returns the sine (sin) of each values in a raster."
+        },
+        {
+            "tool": "sinh",
+            "description": "Returns the hyperbolic sine (sinh) of each values in a raster."
+        },
+        {
+            "tool": "square",
+            "description": "Squares the values in a raster."
+        },
+        {
+            "tool": "square_root",
+            "description": "Returns the square root of the values in a raster."
+        },
+        {
+            "tool": "subtract",
+            "description": "Performs a differencing operation on two rasters or a raster and a constant value."
+        },
+        {
+            "tool": "tan",
+            "description": "Returns the tangent (tan) of each values in a raster."
+        },
+        {
+            "tool": "tanh",
+            "description": "Returns the hyperbolic tangent (tanh) of each values in a raster."
+        },
+        {
+            "tool": "to_degrees",
+            "description": "Converts a raster from radians to degrees."
+        },
+        {
+            "tool": "to_radians",
+            "description": "Converts a raster from degrees to radians."
+        },
+        {
+            "tool": "trend_surface",
+            "description": "Estimates the trend surface of an input raster file."
+        },
+        {
+            "tool": "trend_surface_vector_points",
+            "description": "Estimates a trend surface from vector points."
+        },
+        {
+            "tool": "truncate",
+            "description": "Truncates the values in a raster to the desired number of decimal places."
+        },
+        {
+            "tool": "turning_bands_simulation",
+            "description": "Creates an image containing random values based on a turning-bands simulation."
+        },
+        {
+            "tool": "two_sample_ks_test",
+            "description": "Performs a 2-sample K-S test for significant differences on two input rasters."
+        },
+        {
+            "tool": "wilcoxon_signed_rank_test",
+            "description": "Performs a 2-sample K-S test for significant differences on two input rasters."
+        },
+        {
+            "tool": "xor",
+            "description": "Performs a logical XOR operator on two Boolean raster images."
+        },
+        {
+            "tool": "z_scores",
+            "description": "Standardizes the values in an input raster by converting to z-scores."
+        },
+        {
+            "tool": "zonal_statistics",
+            "description": "Extracts descriptive statistics for a group of patches in a raster."
+        }
+    ],
+    "Image Processing Tools/Filters\n": [
+        {
+            "tool": "adaptive_filter",
+            "description": "Performs an adaptive filter on an image."
+        },
+        {
+            "tool": "bilateral_filter",
+            "description": "A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998)."
+        },
+        {
+            "tool": "conservative_smoothing_filter",
+            "description": "Performs a conservative-smoothing filter on an image."
+        },
+        {
+            "tool": "corner_detection",
+            "description": "Identifies corner patterns in boolean images using hit-and-miss pattern matching."
+        },
+        {
+            "tool": "diff_of_gaussian_filter",
+            "description": "Performs a Difference of Gaussian (DoG) filter on an image."
+        },
+        {
+            "tool": "diversity_filter",
+            "description": "Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster."
+        },
+        {
+            "tool": "edge_preserving_mean_filter",
+            "description": "Performs a simple edge-preserving mean filter on an input image."
+        },
+        {
+            "tool": "emboss_filter",
+            "description": "Performs an emboss filter on an image, similar to a hillshade operation."
+        },
+        {
+            "tool": "fast_almost_gaussian_filter",
+            "description": "Performs a fast approximate Gaussian filter on an image."
+        },
+        {
+            "tool": "gaussian_filter",
+            "description": "Performs a Gaussian filter on an image."
+        },
+        {
+            "tool": "high_pass_bilateral_filter",
+            "description": "Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998)."
+        },
+        {
+            "tool": "high_pass_filter",
+            "description": "Performs a high-pass filter on an input image."
+        },
+        {
+            "tool": "high_pass_median_filter",
+            "description": "Performs a high pass median filter on an input image."
+        },
+        {
+            "tool": "k_nearest_mean_filter",
+            "description": "A k-nearest mean filter is a type of edge-preserving smoothing filter."
+        },
+        {
+            "tool": "laplacian_filter",
+            "description": "Performs a Laplacian filter on an image."
+        },
+        {
+            "tool": "laplacian_of_gaussian_filter",
+            "description": "Performs a Laplacian-of-Gaussian (LoG) filter on an image."
+        },
+        {
+            "tool": "lee_sigma_filter",
+            "description": "Performs a Lee (Sigma) smoothing filter on an image."
+        },
+        {
+            "tool": "line_detection_filter",
+            "description": "Performs a line-detection filter on an image."
+        },
+        {
+            "tool": "majority_filter",
+            "description": "Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster."
+        },
+        {
+            "tool": "maximum_filter",
+            "description": "Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster."
+        },
+        {
+            "tool": "mean_filter",
+            "description": "Performs a mean filter (low-pass filter) on an input image."
+        },
+        {
+            "tool": "median_filter",
+            "description": "Performs a median filter on an input image."
+        },
+        {
+            "tool": "minimum_filter",
+            "description": "Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster."
+        },
+        {
+            "tool": "olympic_filter",
+            "description": "Performs an olympic smoothing filter on an image."
+        },
+        {
+            "tool": "percentile_filter",
+            "description": "Performs a percentile filter on an input image."
+        },
+        {
+            "tool": "prewitt_filter",
+            "description": "Performs a Prewitt edge-detection filter on an image."
+        },
+        {
+            "tool": "range_filter",
+            "description": "Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster."
+        },
+        {
+            "tool": "roberts_cross_filter",
+            "description": "Performs a Robert's cross edge-detection filter on an image."
+        },
+        {
+            "tool": "scharr_filter",
+            "description": "Performs a Scharr edge-detection filter on an image."
+        },
+        {
+            "tool": "sobel_filter",
+            "description": "Performs a Sobel edge-detection filter on an image."
+        },
+        {
+            "tool": "standard_deviation_filter",
+            "description": "Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster."
+        },
+        {
+            "tool": "total_filter",
+            "description": "Performs a total filter on an input image."
+        },
+        {
+            "tool": "unsharp_masking",
+            "description": "An image sharpening technique that enhances edges."
+        },
+        {
+            "tool": "user_defined_weights_filter",
+            "description": "Performs a user-defined weights filter on an image."
+        }
+    ],
+    "Data Tools\n": [
+        {
+            "tool": "add_point_coordinates_to_table",
+            "description": "Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates."
+        },
+        {
+            "tool": "clean_vector",
+            "description": "Removes null features and lines/polygons with fewer than the required number of vertices."
+        },
+        {
+            "tool": "convert_nodata_to_zero",
+            "description": "Converts nodata values in a raster to zero."
+        },
+        {
+            "tool": "convert_raster_format",
+            "description": "Converts raster data from one format to another."
+        },
+        {
+            "tool": "csv_points_to_vector",
+            "description": "Converts a CSV text file to vector points."
+        },
+        {
+            "tool": "export_table_to_csv",
+            "description": "Exports an attribute table to a CSV text file."
+        },
+        {
+            "tool": "join_tables",
+            "description": "Merge a vector's attribute table with another table based on a common field."
+        },
+        {
+            "tool": "lines_to_polygons",
+            "description": "Converts vector polylines to polygons."
+        },
+        {
+            "tool": "merge_table_with_csv",
+            "description": "Merge a vector's attribute table with a table contained within a CSV text file."
+        },
+        {
+            "tool": "merge_vectors",
+            "description": "Combines two or more input vectors of the same ShapeType creating a single, new output vector."
+        },
+        {
+            "tool": "modify_no_data_value",
+            "description": "Modifies nodata values in a raster."
+        },
+        {
+            "tool": "multi_part_to_single_part",
+            "description": "Converts a vector file containing multi-part features into a vector containing only single-part features."
+        },
+        {
+            "tool": "new_raster_from_base",
+            "description": "Creates a new raster using a base image."
+        },
+        {
+            "tool": "polygons_to_lines",
+            "description": "Converts vector polygons to polylines."
+        },
+        {
+            "tool": "print_geo_tiff_tags",
+            "description": "Prints the tags within a GeoTIFF."
+        },
+        {
+            "tool": "raster_to_vector_lines",
+            "description": "Converts a raster lines features into a vector of the POLYLINE shapetype"
+        },
+        {
+            "tool": "raster_to_vector_points",
+            "description": "Converts a raster dataset to a vector of the POINT shapetype."
+        },
+        {
+            "tool": "raster_to_vector_polygons",
+            "description": "Converts a raster dataset to a vector of the POLYGON shapetype."
+        },
+        {
+            "tool": "reinitialize_attribute_table",
+            "description": "Reinitializes a vector's attribute table deleting all fields but the feature ID (FID)."
+        },
+        {
+            "tool": "remove_polygon_holes",
+            "description": "Removes holes within the features of a vector polygon file."
+        },
+        {
+            "tool": "set_nodata_value",
+            "description": "Assign the NoData value for an input image."
+        },
+        {
+            "tool": "single_part_to_multi_part",
+            "description": "Converts a vector file containing multi-part features into a vector containing only single-part features."
+        },
+        {
+            "tool": "vector_lines_to_raster",
+            "description": "Converts a vector containing polylines into a raster."
+        },
+        {
+            "tool": "vector_points_to_raster",
+            "description": "Converts a vector containing points into a raster."
+        },
+        {
+            "tool": "vector_polygons_to_raster",
+            "description": "Converts a vector containing polygons into a raster."
+        }
+    ],
+    "GIS Analysis\n": [
+        {
+            "tool": "aggregate_raster",
+            "description": "Aggregates a raster to a lower resolution."
+        },
+        {
+            "tool": "block_maximum_gridding",
+            "description": "Creates a raster grid based on a set of vector points and assigns grid values using a block maximum scheme."
+        },
+        {
+            "tool": "block_minimum_gridding",
+            "description": "Creates a raster grid based on a set of vector points and assigns grid values using a block minimum scheme."
+        },
+        {
+            "tool": "centroid",
+            "description": "Calculates the centroid, or average location, of raster polygon objects."
+        },
+        {
+            "tool": "centroid_vector",
+            "description": "Identifies the centroid point of a vector polyline or polygon feature or a group of vector points."
+        },
+        {
+            "tool": "clump",
+            "description": "Groups cells that form discrete areas, assigning them unique identifiers."
+        },
+        {
+            "tool": "construct_vector_tin",
+            "description": "Creates a vector triangular irregular network (TIN) for a set of vector points."
+        },
+        {
+            "tool": "create_hexagonal_vector_grid",
+            "description": "Creates a hexagonal vector grid."
+        },
+        {
+            "tool": "create_plane",
+            "description": "Creates a raster image based on the equation for a simple plane."
+        },
+        {
+            "tool": "create_rectangular_vector_grid",
+            "description": "Creates a rectangular vector grid."
+        },
+        {
+            "tool": "dissolve",
+            "description": "Removes the interior, or shared, boundaries within a vector polygon coverage."
+        },
+        {
+            "tool": "eliminate_coincident_points",
+            "description": "Removes any coincident, or nearly coincident, points from a vector points file."
+        },
+        {
+            "tool": "extend_vector_lines",
+            "description": "Extends vector lines by a specified distance."
+        },
+        {
+            "tool": "extract_by_attribute",
+            "description": "Extracts features from an input vector into an output file based on attribute properties."
+        },
+        {
+            "tool": "extract_nodes",
+            "description": "Converts vector lines or polygons into vertex points."
+        },
+        {
+            "tool": "extract_raster_values_at_points",
+            "description": "Extracts the values of raster(s) at vector point locations."
+        },
+        {
+            "tool": "filter_raster_features_by_area",
+            "description": "Removes small-area features from a raster."
+        },
+        {
+            "tool": "find_lowest_or_highest_points",
+            "description": "Locates the lowest and/or highest valued cells in a raster."
+        },
+        {
+            "tool": "heat_map",
+            "description": "Calculates a heat map, or kernel density estimation (KDE), for an input point set."
+        },
+        {
+            "tool": "idw_interpolation",
+            "description": "Interpolates vector points into a raster surface using an inverse-distance weighted scheme."
+        },
+        {
+            "tool": "layer_footprint",
+            "description": "Creates a vector polygon footprint of the area covered by a raster grid or vector layer."
+        },
+        {
+            "tool": "medoid",
+            "description": "Calculates the medoid for a series of vector features contained in a shapefile."
+        },
+        {
+            "tool": "minimum_bounding_box",
+            "description": "Creates a vector minimum bounding rectangle around vector features."
+        },
+        {
+            "tool": "minimum_bounding_circle",
+            "description": "Delineates the minimum bounding circle (i.e. smallest enclosing circle) for a group of vectors."
+        },
+        {
+            "tool": "minimum_bounding_envelope",
+            "description": "Creates a vector axis-aligned minimum bounding rectangle (envelope) around vector features."
+        },
+        {
+            "tool": "minimum_convex_hull",
+            "description": "Creates a vector convex polygon around vector features."
+        },
+        {
+            "tool": "natural_neighbour_interpolation",
+            "description": "Creates a raster grid based on Sibson's natural neighbour method."
+        },
+        {
+            "tool": "nearest_neighbour_gridding",
+            "description": "Creates a raster grid based on a set of vector points and assigns grid values using the nearest neighbour."
+        },
+        {
+            "tool": "polygon_area",
+            "description": "Calculates the area of vector polygons."
+        },
+        {
+            "tool": "polygon_long_axis",
+            "description": "Used to map the long axis of polygon features."
+        },
+        {
+            "tool": "polygon_perimeter",
+            "description": "Calculates the perimeter of vector polygons."
+        },
+        {
+            "tool": "polygon_short_axis",
+            "description": "Used to map the short axis of polygon features."
+        },
+        {
+            "tool": "radial_basis_function_interpolation",
+            "description": "Interpolates vector points into a raster surface using a radial basis function scheme."
+        },
+        {
+            "tool": "raster_area",
+            "description": "Calculates the area of polygons or classes within a raster image."
+        },
+        {
+            "tool": "raster_cell_assignment",
+            "description": "Assign row or column number to cells."
+        },
+        {
+            "tool": "raster_perimeter",
+            "description": "Calculates the perimeters of polygons or classes within a raster image."
+        },
+        {
+            "tool": "reclass",
+            "description": "Reclassifies the values in a raster image."
+        },
+        {
+            "tool": "reclass_equal_interval",
+            "description": "Reclassifies the values in a raster image based on equal-ranges."
+        },
+        {
+            "tool": "reclass_from_file",
+            "description": "Reclassifies the values in a raster image using reclass ranges in a text file."
+        },
+        {
+            "tool": "smooth_vectors",
+            "description": "Smooths a vector coverage of either a POLYLINE or POLYGON base ShapeType."
+        },
+        {
+            "tool": "split_vector_lines",
+            "description": "Used to split a vector line coverage into even-lengthed segments."
+        },
+        {
+            "tool": "tin_gridding",
+            "description": "Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points."
+        },
+        {
+            "tool": "travelling_salesman_problem",
+            "description": "Finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations."
+        },
+        {
+            "tool": "vector_hex_binning",
+            "description": "Hex-bins a set of vector points."
+        },
+        {
+            "tool": "voronoi_diagram",
+            "description": "Creates a vector Voronoi diagram for a set of vector points."
+        }
+    ],
+    "LiDAR Tools\n": [
+        {
+            "tool": "ascii_to_las",
+            "description": "Converts one or more ASCII files containing LiDAR points into LAS files."
+        },
+        {
+            "tool": "classify_buildings_in_lidar",
+            "description": "Reclassifies a LiDAR points that lie within vector building footprints."
+        },
+        {
+            "tool": "classify_overlap_points",
+            "description": "Classifies or filters LAS points in regions of overlapping flight lines."
+        },
+        {
+            "tool": "clip_lidar_to_polygon",
+            "description": "Clips a LiDAR point cloud to a vector polygon or polygons."
+        },
+        {
+            "tool": "erase_polygon_from_lidar",
+            "description": "Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud."
+        },
+        {
+            "tool": "filter_lidar_classes",
+            "description": "Removes points in a LAS file with certain specified class values."
+        },
+        {
+            "tool": "filter_lidar_scan_angles",
+            "description": "Removes points in a LAS file with scan angles greater than a threshold."
+        },
+        {
+            "tool": "find_flightline_edge_points",
+            "description": "Identifies points along a flightline's edge in a LAS file."
+        },
+        {
+            "tool": "flightline_overlap",
+            "description": "Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight-lines in each grid cell."
+        },
+        {
+            "tool": "height_above_ground",
+            "description": "Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point."
+        },
+        {
+            "tool": "individual_tree_detection",
+            "description": "Identifies points in a LiDAR point cloud that are associated with the tops of individual trees."
+        },
+        {
+            "tool": "las_to_ascii",
+            "description": "Converts one or more LAS files into ASCII text files."
+        },
+        {
+            "tool": "las_to_multipoint_shapefile",
+            "description": "Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory."
+        },
+        {
+            "tool": "las_to_shapefile",
+            "description": "Converts one or more LAS files into a vector Shapefile of POINT ShapeType."
+        },
+        {
+            "tool": "las_to_zlidar",
+            "description": "Converts one or more LAS files into the zlidar compressed LiDAR data format."
+        },
+        {
+            "tool": "lidar_block_maximum",
+            "description": "Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory."
+        },
+        {
+            "tool": "lidar_block_minimum",
+            "description": "Creates a block-minimum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory."
+        },
+        {
+            "tool": "lidar_classify_subset",
+            "description": "Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud."
+        },
+        {
+            "tool": "lidar_colourize",
+            "description": "Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image."
+        },
+        {
+            "tool": "lidar_digital_surface_model",
+            "description": "Creates a top-surface digital surface model (DSM) from a LiDAR point cloud."
+        },
+        {
+            "tool": "lidar_elevation_slice",
+            "description": "Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range."
+        },
+        {
+            "tool": "lidar_ground_point_filter",
+            "description": "Identifies ground points within LiDAR dataset using a slope-based method."
+        },
+        {
+            "tool": "lidar_hex_binning",
+            "description": "Hex-bins a set of LiDAR points."
+        },
+        {
+            "tool": "lidar_hillshade",
+            "description": "Calculates a hillshade value for points within a LAS file and stores these data in the RGB field."
+        },
+        {
+            "tool": "lidar_histogram",
+            "description": "Creates a histogram of LiDAR data."
+        },
+        {
+            "tool": "lidar_idw_interpolation",
+            "description": "Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory."
+        },
+        {
+            "tool": "lidar_info",
+            "description": "Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys."
+        },
+        {
+            "tool": "lidar_join",
+            "description": "Joins multiple LiDAR (LAS) files into a single LAS file."
+        },
+        {
+            "tool": "lidar_kappa_index",
+            "description": "Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files."
+        },
+        {
+            "tool": "lidar_nearest_neighbour_gridding",
+            "description": "Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory."
+        },
+        {
+            "tool": "lidar_point_density",
+            "description": "Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory."
+        },
+        {
+            "tool": "lidar_point_stats",
+            "description": "Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory."
+        },
+        {
+            "tool": "lidar_ransac_planes",
+            "description": "Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes."
+        },
+        {
+            "tool": "lidar_rbf_interpolation",
+            "description": "Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory."
+        },
+        {
+            "tool": "lidar_remove_duplicates",
+            "description": "Removes duplicate points from a LiDAR data set."
+        },
+        {
+            "tool": "lidar_remove_outliers",
+            "description": "Removes outliers (high and low points) in a LiDAR point cloud."
+        },
+        {
+            "tool": "lidar_rooftop_analysis",
+            "description": "Identifies roof segments in a LiDAR point cloud."
+        },
+        {
+            "tool": "lidar_segmentation",
+            "description": "Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity."
+        },
+        {
+            "tool": "lidar_segmentation_based_filter",
+            "description": "Identifies ground points within LiDAR point clouds using a segmentation based approach."
+        },
+        {
+            "tool": "lidar_shift",
+            "description": "Shifts the x,y,z coordinates of a LiDAR file."
+        },
+        {
+            "tool": "lidar_tin_gridding",
+            "description": "Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points."
+        },
+        {
+            "tool": "lidar_thin",
+            "description": "Thins a LiDAR point cloud, reducing point density."
+        },
+        {
+            "tool": "lidar_thin_high_density",
+            "description": "Thins points from high density areas within a LiDAR point cloud."
+        },
+        {
+            "tool": "lidar_tile",
+            "description": "Tiles a LiDAR LAS file into multiple LAS files."
+        },
+        {
+            "tool": "lidar_tile_footprint",
+            "description": "Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory."
+        },
+        {
+            "tool": "lidar_tophat_transform",
+            "description": "Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy."
+        },
+        {
+            "tool": "normal_vectors",
+            "description": "Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field."
+        },
+        {
+            "tool": "normalize_lidar",
+            "description": "Normalizes a LiDAR point cloud."
+        },
+        {
+            "tool": "select_tiles_by_polygon",
+            "description": "Copies LiDAR tiles overlapping with a polygon into an output directory."
+        },
+        {
+            "tool": "zlidar_to_las",
+            "description": "Converts one or more zlidar files into the LAS data format."
+        }
+    ],
+    "Geomorphometric Analysis\n": [
+        {
+            "tool": "aspect",
+            "description": "Calculates an aspect raster from an input DEM."
+        },
+        {
+            "tool": "average_normal_vector_angular_deviation",
+            "description": "Calculates the circular variance of aspect at a scale for a DEM."
+        },
+        {
+            "tool": "circular_variance_of_aspect",
+            "description": "Calculates the circular variance of aspect at a scale for a DEM."
+        },
+        {
+            "tool": "contours_from_points",
+            "description": "Creates a contour coverage from a set of input points."
+        },
+        {
+            "tool": "contours_from_raster",
+            "description": "Derives a vector contour coverage from a raster surface."
+        },
+        {
+            "tool": "convergence_index",
+            "description": "Calculates Qin et al. (2007) flow accumulation."
+        },
+        {
+            "tool": "dev_from_mean_elev",
+            "description": "Calculates deviation from mean elevation."
+        },
+        {
+            "tool": "diff_from_mean_elev",
+            "description": "Calculates difference from mean elevation (equivalent to a high-pass filter)."
+        },
+        {
+            "tool": "directional_relief",
+            "description": "Calculates relief for cells in an input DEM for a specified direction."
+        },
+        {
+            "tool": "downslope_index",
+            "description": "Calculates the Hjerdt et al. (2004) downslope index."
+        },
+        {
+            "tool": "edge_density",
+            "description": "Calculates the density of edges, or breaks-in-slope within DEMs."
+        },
+        {
+            "tool": "elev_above_pit",
+            "description": "Calculate the elevation of each grid cell above the nearest downstream pit cell or grid edge cell."
+        },
+        {
+            "tool": "elev_percentile",
+            "description": "Calculates the elevation percentile raster from a DEM."
+        },
+        {
+            "tool": "elev_relative_to_min_max",
+            "description": "Calculates the elevation of a location relative to the minimum and maximum elevations in a DEM."
+        },
+        {
+            "tool": "elev_relative_to_watershed_min_max",
+            "description": "Calculates the elevation of a location relative to the minimum and maximum elevations in a watershed."
+        },
+        {
+            "tool": "embankment_mapping",
+            "description": "Maps and/or removes road embankments from an input fine-resolution DEM."
+        },
+        {
+            "tool": "exposure_towards_wind_flux",
+            "description": "Evaluates hydrologic connectivity within a DEM"
+        },
+        {
+            "tool": "feature_preserving_smoothing",
+            "description": "Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm."
+        },
+        {
+            "tool": "fetch_analysis",
+            "description": "Performs an analysis of fetch or upwind distance to an obstacle."
+        },
+        {
+            "tool": "fill_missing_data",
+            "description": "Fills NoData holes in a DEM."
+        },
+        {
+            "tool": "find_ridges",
+            "description": "Identifies potential ridge and peak grid cells."
+        },
+        {
+            "tool": "gaussian_curvature",
+            "description": "Calculates a mean curvature raster from an input DEM."
+        },
+        {
+            "tool": "gaussian_scale_space",
+            "description": "Uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM."
+        },
+        {
+            "tool": "geomorphons",
+            "description": "Computes geomorphon patterns."
+        },
+        {
+            "tool": "hillshade",
+            "description": "Calculates a hillshade raster from an input DEM."
+        },
+        {
+            "tool": "horizon_angle",
+            "description": "Calculates horizon angle (maximum upwind slope) for each grid cell in an input DEM."
+        },
+        {
+            "tool": "hypsometric_analysis",
+            "description": "Calculates a hypsometric curve for one or more DEMs."
+        },
+        {
+            "tool": "hypsometrically_tinted_hillshade",
+            "description": "Creates an colour shaded relief image from an input DEM."
+        },
+        {
+            "tool": "local_quadratic_regression",
+            "description": "An implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996)."
+        },
+        {
+            "tool": "map_off_terrain_objects",
+            "description": "Maps off-terrain objects in a digital elevation model (DEM)."
+        },
+        {
+            "tool": "max_anisotropy_dev",
+            "description": "Calculates the maximum anisotropy (directionality) in elevation deviation over a range of spatial scales."
+        },
+        {
+            "tool": "max_anisotropy_dev_signature",
+            "description": "Calculates the anisotropy in deviation from mean for points over a range of spatial scales."
+        },
+        {
+            "tool": "max_branch_length",
+            "description": "Lindsay and Seibert's (2013) branch length index is used to map drainage divides or ridge lines."
+        },
+        {
+            "tool": "max_difference_from_mean",
+            "description": "Calculates the maximum difference from mean elevation over a range of spatial scales."
+        },
+        {
+            "tool": "max_downslope_elev_change",
+            "description": "Calculates the maximum downslope change in elevation between a grid cell and its eight downslope neighbors."
+        },
+        {
+            "tool": "max_elev_dev_signature",
+            "description": "Calculates the maximum elevation deviation over a range of spatial scales and for a set of points."
+        },
+        {
+            "tool": "max_elevation_deviation",
+            "description": "Calculates the maximum elevation deviation over a range of spatial scales."
+        },
+        {
+            "tool": "max_upslope_elev_change",
+            "description": "Calculates the maximum upslope change in elevation between a grid cell and its eight downslope neighbors."
+        },
+        {
+            "tool": "maximal_curvature",
+            "description": "Calculates a mean curvature raster from an input DEM."
+        },
+        {
+            "tool": "mean_curvature",
+            "description": "Calculates a mean curvature raster from an input DEM."
+        },
+        {
+            "tool": "min_downslope_elev_change",
+            "description": "Calculates the minimum downslope change in elevation between a grid cell and its eight downslope neighbors."
+        },
+        {
+            "tool": "minimal_curvature",
+            "description": "Calculates a mean curvature raster from an input DEM."
+        },
+        {
+            "tool": "multidirectional_hillshade",
+            "description": "Calculates a multi-direction hillshade raster from an input DEM."
+        },
+        {
+            "tool": "multiscale_elevation_percentile",
+            "description": "Calculates surface roughness over a range of spatial scales."
+        },
+        {
+            "tool": "multiscale_roughness",
+            "description": "Calculates surface roughness over a range of spatial scales."
+        },
+        {
+            "tool": "multiscale_roughness_signature",
+            "description": "Calculates the surface roughness for points over a range of spatial scales."
+        },
+        {
+            "tool": "multiscale_std_dev_normals",
+            "description": "Calculates surface roughness over a range of spatial scales."
+        },
+        {
+            "tool": "multiscale_std_dev_normals_signature",
+            "description": "Calculates the surface roughness for points over a range of spatial scales."
+        },
+        {
+            "tool": "multiscale_topographic_position_image",
+            "description": "Creates a multiscale topographic position image from three DEVmax rasters of differing spatial scale ranges."
+        },
+        {
+            "tool": "num_downslope_neighbours",
+            "description": "Calculates the number of downslope neighbours to each grid cell in a DEM."
+        },
+        {
+            "tool": "num_upslope_neighbours",
+            "description": "Calculates the number of upslope neighbours to each grid cell in a DEM."
+        },
+        {
+            "tool": "pennock_landform_class",
+            "description": "Classifies hillslope zones based on slope, profile curvature, and plan curvature."
+        },
+        {
+            "tool": "percent_elev_range",
+            "description": "Calculates percent of elevation range from a DEM."
+        },
+        {
+            "tool": "plan_curvature",
+            "description": "Calculates a plan (contour) curvature raster from an input DEM."
+        },
+        {
+            "tool": "profile",
+            "description": "Plots profiles from digital surface models."
+        },
+        {
+            "tool": "profile_curvature",
+            "description": "Calculates a profile curvature raster from an input DEM."
+        },
+        {
+            "tool": "relative_aspect",
+            "description": "Calculates relative aspect (relative to a user-specified direction) from an input DEM."
+        },
+        {
+            "tool": "relative_topographic_position",
+            "description": "Calculates the relative topographic position index from a DEM."
+        },
+        {
+            "tool": "remove_off_terrain_objects",
+            "description": "Removes off-terrain objects from a raster digital elevation model (DEM)."
+        },
+        {
+            "tool": "ruggedness_index",
+            "description": "Calculates the Riley et al.'s (1999) terrain ruggedness index from an input DEM."
+        },
+        {
+            "tool": "sediment_transport_index",
+            "description": "Calculates the sediment transport index."
+        },
+        {
+            "tool": "slope",
+            "description": "Calculates a slope raster from an input DEM."
+        },
+        {
+            "tool": "slope_vs_elevation_plot",
+            "description": "Creates a slope vs. elevation plot for one or more DEMs."
+        },
+        {
+            "tool": "spherical_std_dev_of_normals",
+            "description": "Calculates the spherical standard deviation of surface normals for a DEM."
+        },
+        {
+            "tool": "standard_deviation_of_slope",
+            "description": "Calculates the standard deviation of slope from an input DEM."
+        },
+        {
+            "tool": "stream_power_index",
+            "description": "Calculates the relative stream power index."
+        },
+        {
+            "tool": "surface_area_ratio",
+            "description": "Calculates a the surface area ratio of each grid cell in an input DEM."
+        },
+        {
+            "tool": "tangential_curvature",
+            "description": "Calculates a tangential curvature raster from an input DEM."
+        },
+        {
+            "tool": "time_in_daylight",
+            "description": "Calculates the proportion of time a location is not within an area of shadow."
+        },
+        {
+            "tool": "topographic_hachures",
+            "description": "Derives topographic hachures from a raster surface."
+        },
+        {
+            "tool": "total_curvature",
+            "description": "Calculates a total curvature raster from an input DEM."
+        },
+        {
+            "tool": "viewshed",
+            "description": "Identifies the viewshed for a point or set of points."
+        },
+        {
+            "tool": "visibility_index",
+            "description": "Estimates the relative visibility of sites in a DEM."
+        },
+        {
+            "tool": "wetness_index",
+            "description": "Calculates the topographic wetness index, Ln(A / tan(slope))."
+        }
+    ],
+    "Hydrological Analysis\n": [
+        {
+            "tool": "average_flowpath_slope",
+            "description": "Measures the average slope gradient from each grid cell to all upslope divide cells."
+        },
+        {
+            "tool": "average_upslope_flowpath_length",
+            "description": "Measures the average length of all upslope flowpaths draining each grid cell."
+        },
+        {
+            "tool": "basins",
+            "description": "Identifies drainage basins that drain to the DEM edge."
+        },
+        {
+            "tool": "breach_depressions",
+            "description": "Breaches all of the depressions in a DEM using Lindsay's (2016) algorithm. This should be preferred over depression filling in most cases."
+        },
+        {
+            "tool": "breach_depressions_least_cost",
+            "description": "Breaches the depressions in a DEM using a least-cost pathway method."
+        },
+        {
+            "tool": "breach_single_cell_pits",
+            "description": "Removes single-cell pits from an input DEM by breaching."
+        },
+        {
+            "tool": "burn_streams_at_roads",
+            "description": "Burns-in streams at the sites of road embankments."
+        },
+        {
+            "tool": "d8_flow_accumulation",
+            "description": "Calculates a D8 flow accumulation raster from an input DEM or flow pointer."
+        },
+        {
+            "tool": "d8_mass_flux",
+            "description": "Performs a D8 mass flux calculation."
+        },
+        {
+            "tool": "d8_pointer",
+            "description": "Calculates a D8 flow pointer raster from an input DEM."
+        },
+        {
+            "tool": "d_inf_flow_accumulation",
+            "description": "Calculates a D-infinity flow accumulation raster from an input DEM."
+        },
+        {
+            "tool": "d_inf_mass_flux",
+            "description": "Performs a D-infinity mass flux calculation."
+        },
+        {
+            "tool": "d_inf_pointer",
+            "description": "Calculates a D-infinity flow pointer (flow direction) raster from an input DEM."
+        },
+        {
+            "tool": "depth_in_sink",
+            "description": "Measures the depth of sinks (depressions) in a DEM."
+        },
+        {
+            "tool": "downslope_distance_to_stream",
+            "description": "Measures distance to the nearest downslope stream cell."
+        },
+        {
+            "tool": "downslope_flowpath_length",
+            "description": "Calculates the downslope flowpath length from each cell to basin outlet."
+        },
+        {
+            "tool": "edge_contamination",
+            "description": "Identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications."
+        },
+        {
+            "tool": "elevation_above_stream",
+            "description": "Calculates the elevation of cells above the nearest downslope stream cell."
+        },
+        {
+            "tool": "elevation_above_stream_euclidean",
+            "description": "Calculates the elevation of cells above the nearest (Euclidean distance) stream cell."
+        },
+        {
+            "tool": "fd8_flow_accumulation",
+            "description": "Calculates an FD8 flow accumulation raster from an input DEM."
+        },
+        {
+            "tool": "fd8_pointer",
+            "description": "Calculates an FD8 flow pointer raster from an input DEM."
+        },
+        {
+            "tool": "fill_burn",
+            "description": "Burns streams into a DEM using the FillBurn (Saunders, 1999) method."
+        },
+        {
+            "tool": "fill_depressions",
+            "description": "Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases."
+        },
+        {
+            "tool": "fill_depressions_planchon_and_darboux",
+            "description": "Fills all of the depressions in a DEM using the Planchon and Darboux (2002) method."
+        },
+        {
+            "tool": "fill_depressions_wang_and_liu",
+            "description": "Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases."
+        },
+        {
+            "tool": "fill_single_cell_pits",
+            "description": "Raises pit cells to the elevation of their lowest neighbour."
+        },
+        {
+            "tool": "find_no_flow_cells",
+            "description": "Finds grid cells with no downslope neighbours."
+        },
+        {
+            "tool": "find_parallel_flow",
+            "description": "Finds areas of parallel flow in D8 flow direction rasters."
+        },
+        {
+            "tool": "flatten_lakes",
+            "description": "Flattens lake polygons in a raster DEM."
+        },
+        {
+            "tool": "flood_order",
+            "description": "Assigns each DEM grid cell its order in the sequence of inundations that are encountered during a search starting from the edges, moving inward at increasing elevations."
+        },
+        {
+            "tool": "flow_accumulation_full_workflow",
+            "description": "Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster."
+        },
+        {
+            "tool": "flow_length_diff",
+            "description": "Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges."
+        },
+        {
+            "tool": "hillslopes",
+            "description": "Identifies the individual hillslopes draining to each link in a stream network."
+        },
+        {
+            "tool": "impoundment_size_index",
+            "description": "Calculates the impoundment size resulting from damming a DEM."
+        },
+        {
+            "tool": "insert_dams",
+            "description": "Calculates the impoundment size resulting from damming a DEM."
+        },
+        {
+            "tool": "isobasins",
+            "description": "Divides a landscape into nearly equal sized drainage basins (i.e. watersheds)."
+        },
+        {
+            "tool": "jenson_snap_pour_points",
+            "description": "Moves outlet points used to specify points of interest in a watershedding operation to the nearest stream cell."
+        },
+        {
+            "tool": "longest_flowpath",
+            "description": "Delineates the longest flowpaths for a group of subbasins or watersheds."
+        },
+        {
+            "tool": "md_inf_flow_accumulation",
+            "description": "Calculates an FD8 flow accumulation raster from an input DEM."
+        },
+        {
+            "tool": "max_upslope_flowpath_length",
+            "description": "Measures the maximum length of all upslope flowpaths draining each grid cell."
+        },
+        {
+            "tool": "max_upslope_value",
+            "description": "Calculates the maximum upslope value from an input values raster along flowpaths."
+        },
+        {
+            "tool": "num_inflowing_neighbours",
+            "description": "Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm."
+        },
+        {
+            "tool": "qin_flow_accumulation",
+            "description": "Calculates Qin et al. (2007) flow accumulation."
+        },
+        {
+            "tool": "quinn_flow_accumulation",
+            "description": "Calculates Quinn et al. (1995) flow accumulation."
+        },
+        {
+            "tool": "raise_walls",
+            "description": "Raises walls in a DEM along a line or around a polygon, e.g. a watershed."
+        },
+        {
+            "tool": "rho8_flow_accumulation",
+            "description": "Calculates Fairfield and Leymarie (1991) flow accumulation."
+        },
+        {
+            "tool": "rho8_pointer",
+            "description": "Calculates a stochastic Rho8 flow pointer raster from an input DEM."
+        },
+        {
+            "tool": "sink",
+            "description": "Identifies the depressions in a DEM, giving each feature a unique identifier."
+        },
+        {
+            "tool": "snap_pour_points",
+            "description": "Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood."
+        },
+        {
+            "tool": "stochastic_depression_analysis",
+            "description": "Performs a stochastic analysis of depressions within a DEM."
+        },
+        {
+            "tool": "strahler_order_basins",
+            "description": "Identifies Strahler-order basins from an input stream network."
+        },
+        {
+            "tool": "subbasins",
+            "description": "Identifies the catchments, or sub-basin, draining to each link in a stream network."
+        },
+        {
+            "tool": "trace_downslope_flowpaths",
+            "description": "Traces downslope flowpaths from one or more target sites (i.e. seed points)."
+        },
+        {
+            "tool": "unnest_basins",
+            "description": "Extract whole watersheds for a set of outlet points."
+        },
+        {
+            "tool": "upslope_depression_storage",
+            "description": "Estimates the average upslope depression storage depth."
+        },
+        {
+            "tool": "watershed",
+            "description": "Identifies the watershed, or drainage basin, draining to a set of target cells."
+        }
+    ],
+    "GIS Analysis/Overlay Tools\n": [
+        {
+            "tool": "average_overlay",
+            "description": "Calculates the average for each grid cell from a group of raster images."
+        },
+        {
+            "tool": "clip",
+            "description": "Extract all the features, or parts of features, that overlap with the features of the clip vector."
+        },
+        {
+            "tool": "clip_raster_to_polygon",
+            "description": "Clips a raster to a vector polygon."
+        },
+        {
+            "tool": "count_if",
+            "description": "Counts the number of occurrences of a specified value in a cell-stack of rasters."
+        },
+        {
+            "tool": "difference",
+            "description": "Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features."
+        },
+        {
+            "tool": "erase",
+            "description": "Removes all the features, or parts of features, that overlap with the features of the erase vector polygon."
+        },
+        {
+            "tool": "erase_polygon_from_raster",
+            "description": "Erases (cuts out) a vector polygon from a raster."
+        },
+        {
+            "tool": "highest_position",
+            "description": "Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis."
+        },
+        {
+            "tool": "intersect",
+            "description": "Identifies the parts of features in common between two input vector layers."
+        },
+        {
+            "tool": "line_intersections",
+            "description": "Identifies points where the features of two vector line layers intersect."
+        },
+        {
+            "tool": "lowest_position",
+            "description": "Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis."
+        },
+        {
+            "tool": "max_absolute_overlay",
+            "description": "Evaluates the maximum absolute value for each grid cell from a stack of input rasters."
+        },
+        {
+            "tool": "max_overlay",
+            "description": "Evaluates the maximum value for each grid cell from a stack of input rasters."
+        },
+        {
+            "tool": "merge_line_segments",
+            "description": "Merges vector line segments into larger features."
+        },
+        {
+            "tool": "min_absolute_overlay",
+            "description": "Evaluates the minimum absolute value for each grid cell from a stack of input rasters."
+        },
+        {
+            "tool": "min_overlay",
+            "description": "Evaluates the minimum value for each grid cell from a stack of input rasters."
+        },
+        {
+            "tool": "multiply_overlay",
+            "description": "Calculates the sum for each grid cell from a group of raster images."
+        },
+        {
+            "tool": "percent_equal_to",
+            "description": "Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis."
+        },
+        {
+            "tool": "percent_greater_than",
+            "description": "Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis."
+        },
+        {
+            "tool": "percent_less_than",
+            "description": "Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis."
+        },
+        {
+            "tool": "pick_from_list",
+            "description": "Outputs the value from a raster stack specified by a position raster."
+        },
+        {
+            "tool": "polygonize",
+            "description": "Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files."
+        },
+        {
+            "tool": "split_with_lines",
+            "description": "Splits the lines or polygons in one layer using the lines in another layer."
+        },
+        {
+            "tool": "sum_overlay",
+            "description": "Calculates the sum for each grid cell from a group of raster images."
+        },
+        {
+            "tool": "symmetrical_difference",
+            "description": "Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features."
+        },
+        {
+            "tool": "union",
+            "description": "Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers."
+        },
+        {
+            "tool": "update_nodata_cells",
+            "description": "Replaces the NoData values in an input raster with the corresponding values contained in a second update layer."
+        },
+        {
+            "tool": "weighted_overlay",
+            "description": "Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE)."
+        },
+        {
+            "tool": "weighted_sum",
+            "description": "Performs a weighted-sum overlay on multiple input raster images."
+        }
+    ],
+    "Image Processing Tools/Image Enhancement\n": [
+        {
+            "tool": "balance_contrast_enhancement",
+            "description": "Performs a balance contrast enhancement on a colour-composite image of multispectral data."
+        },
+        {
+            "tool": "correct_vignetting",
+            "description": "Corrects the darkening of images towards corners."
+        },
+        {
+            "tool": "direct_decorrelation_stretch",
+            "description": "Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data."
+        },
+        {
+            "tool": "gamma_correction",
+            "description": "Performs a gamma correction on an input images."
+        },
+        {
+            "tool": "gaussian_contrast_stretch",
+            "description": "Performs a Gaussian contrast stretch on input images."
+        },
+        {
+            "tool": "histogram_equalization",
+            "description": "Performs a histogram equalization contrast enhancement on an image."
+        },
+        {
+            "tool": "histogram_matching",
+            "description": "Alters the statistical distribution of a raster image matching it to a specified PDF."
+        },
+        {
+            "tool": "histogram_matching_two_images",
+            "description": "Alters the cumulative distribution function of a raster image to that of another image."
+        },
+        {
+            "tool": "min_max_contrast_stretch",
+            "description": "Performs a min-max contrast stretch on an input greytone image."
+        },
+        {
+            "tool": "panchromatic_sharpening",
+            "description": "Increases the spatial resolution of image data by combining multispectral bands with panchromatic data."
+        },
+        {
+            "tool": "percentage_contrast_stretch",
+            "description": "Performs a percentage linear contrast stretch on input images."
+        },
+        {
+            "tool": "sigmoidal_contrast_stretch",
+            "description": "Performs a sigmoidal contrast stretch on input images."
+        },
+        {
+            "tool": "standard_deviation_contrast_stretch",
+            "description": "Performs a standard-deviation contrast stretch on input images."
+        }
+    ],
+    "GIS Analysis/Patch Shape Tools\n": [
+        {
+            "tool": "boundary_shape_complexity",
+            "description": "Calculates the complexity of the boundaries of raster polygons."
+        },
+        {
+            "tool": "compactness_ratio",
+            "description": "Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons."
+        },
+        {
+            "tool": "deviation_from_regional_direction",
+            "description": "Calculates the deviation of vector polygons from the regional average direction."
+        },
+        {
+            "tool": "edge_proportion",
+            "description": "Calculate the proportion of cells in a raster polygon that are edge cells."
+        },
+        {
+            "tool": "elongation_ratio",
+            "description": "Calculates the elongation ratio for vector polygons."
+        },
+        {
+            "tool": "find_patch_or_class_edge_cells",
+            "description": "Finds all cells located on the edge of patch or class features."
+        },
+        {
+            "tool": "hole_proportion",
+            "description": "Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull."
+        },
+        {
+            "tool": "linearity_index",
+            "description": "Calculates the linearity index for vector polygons."
+        },
+        {
+            "tool": "narrowness_index",
+            "description": "Calculates the narrowness of raster polygons."
+        },
+        {
+            "tool": "patch_orientation",
+            "description": "Calculates the orientation of vector polygons."
+        },
+        {
+            "tool": "perimeter_area_ratio",
+            "description": "Calculates the perimeter-area ratio of vector polygons."
+        },
+        {
+            "tool": "radius_of_gyration",
+            "description": "Calculates the distance of cells from their polygon's centroid."
+        },
+        {
+            "tool": "related_circumscribing_circle",
+            "description": "Calculates the related circumscribing circle of vector polygons."
+        },
+        {
+            "tool": "shape_complexity_index",
+            "description": "Calculates overall polygon shape complexity or irregularity."
+        },
+        {
+            "tool": "shape_complexity_index_raster",
+            "description": "Calculates the complexity of raster polygons or classes."
+        }
+    ],
+    "GIS Analysis/Distance Tools\n": [
+        {
+            "tool": "buffer_raster",
+            "description": "Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image."
+        },
+        {
+            "tool": "cost_allocation",
+            "description": "Identifies the source cell to which each grid cell is connected by a least-cost pathway in a cost-distance analysis."
+        },
+        {
+            "tool": "cost_distance",
+            "description": "Performs cost-distance accumulation on a cost surface and a group of source cells."
+        },
+        {
+            "tool": "cost_pathway",
+            "description": "Performs cost-distance pathway analysis using a series of destination grid cells."
+        },
+        {
+            "tool": "euclidean_allocation",
+            "description": "Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform."
+        },
+        {
+            "tool": "euclidean_distance",
+            "description": "Calculates the Shih and Wu (2004) Euclidean distance transform."
+        }
+    ],
+    "Image Processing Tools\n": [
+        {
+            "tool": "change_vector_analysis",
+            "description": "Performs a change vector analysis on a two-date multi-spectral dataset."
+        },
+        {
+            "tool": "closing",
+            "description": "A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set."
+        },
+        {
+            "tool": "create_colour_composite",
+            "description": "Creates a colour-composite image from three bands of multispectral imagery."
+        },
+        {
+            "tool": "flip_image",
+            "description": "Reflects an image in the vertical or horizontal axis."
+        },
+        {
+            "tool": "ihs_to_rgb",
+            "description": "Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images."
+        },
+        {
+            "tool": "image_stack_profile",
+            "description": "Plots an image stack profile (i.e. signature) for a set of points and multispectral images."
+        },
+        {
+            "tool": "integral_image",
+            "description": "Transforms an input image (summed area table) into its integral image equivalent."
+        },
+        {
+            "tool": "line_thinning",
+            "description": "Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool."
+        },
+        {
+            "tool": "mosaic",
+            "description": "Mosaics two or more images together."
+        },
+        {
+            "tool": "mosaic_with_feathering",
+            "description": "Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects."
+        },
+        {
+            "tool": "normalized_difference_index",
+            "description": "Calculate a normalized-difference index (NDI) from two bands of multispectral image data."
+        },
+        {
+            "tool": "opening",
+            "description": "An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set."
+        },
+        {
+            "tool": "otsu_thresholding",
+            "description": "Applies Ostu's method for optimal binary thresholding of a continuous image."
+        },
+        {
+            "tool": "remove_spurs",
+            "description": "Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool."
+        },
+        {
+            "tool": "resample",
+            "description": "Resamples one or more input images into a destination image."
+        },
+        {
+            "tool": "rgb_to_ihs",
+            "description": "Converts red, green, and blue (RGB) images into intensity, hue, and saturation (IHS) images."
+        },
+        {
+            "tool": "split_colour_composite",
+            "description": "Splits an RGB colour composite image into separate multispectral images."
+        },
+        {
+            "tool": "thicken_raster_line",
+            "description": "Thickens single-cell wide lines within a raster image."
+        },
+        {
+            "tool": "tophat_transform",
+            "description": "Performs either a white or black top-hat transform on an input image."
+        },
+        {
+            "tool": "write_function_memory_insertion",
+            "description": "Performs a write function memory insertion for single-band multi-date change detection."
+        }
+    ],
+    "Stream Network Analysis\n": [
+        {
+            "tool": "correct_stream_vector_direction",
+            "description": "This tool resolves directional errors in digitized vector streams."
+        },
+        {
+            "tool": "distance_to_outlet",
+            "description": "Calculates the distance of stream grid cells to the channel network outlet cell."
+        },
+        {
+            "tool": "extract_streams",
+            "description": "Extracts stream grid cells from a flow accumulation raster."
+        },
+        {
+            "tool": "extract_valleys",
+            "description": "Identifies potential valley bottom grid cells based on local topolography alone."
+        },
+        {
+            "tool": "farthest_channel_head",
+            "description": "Calculates the distance to the furthest upstream channel head for each stream cell."
+        },
+        {
+            "tool": "find_main_stem",
+            "description": "Finds the main stem, based on stream lengths, of each stream network."
+        },
+        {
+            "tool": "hack_stream_order",
+            "description": "Assigns the Hack stream order to each tributary in a stream network."
+        },
+        {
+            "tool": "horton_stream_order",
+            "description": "Assigns the Horton stream order to each tributary in a stream network."
+        },
+        {
+            "tool": "length_of_upstream_channels",
+            "description": "Calculates the total length of channels upstream."
+        },
+        {
+            "tool": "long_profile",
+            "description": "Plots the stream longitudinal profiles for one or more rivers."
+        },
+        {
+            "tool": "long_profile_from_points",
+            "description": "Plots the longitudinal profiles from flow-paths initiating from a set of vector points."
+        },
+        {
+            "tool": "raster_streams_to_vector",
+            "description": "Converts a raster stream file into a vector file."
+        },
+        {
+            "tool": "rasterize_streams",
+            "description": "Rasterizes vector streams based on Lindsay (2016) method."
+        },
+        {
+            "tool": "remove_short_streams",
+            "description": "Removes short first-order streams from a stream network."
+        },
+        {
+            "tool": "repair_stream_vector_topology",
+            "description": "This tool resolves topological errors and inconsistencies associated with digitized vector streams."
+        },
+        {
+            "tool": "shreve_stream_magnitude",
+            "description": "Assigns the Shreve stream magnitude to each link in a stream network."
+        },
+        {
+            "tool": "strahler_stream_order",
+            "description": "Assigns the Strahler stream order to each link in a stream network."
+        },
+        {
+            "tool": "stream_link_class",
+            "description": "Identifies the exterior/interior links and nodes in a stream network."
+        },
+        {
+            "tool": "stream_link_identifier",
+            "description": "Assigns a unique identifier to each link in a stream network."
+        },
+        {
+            "tool": "stream_link_length",
+            "description": "Estimates the length of each link (or tributary) in a stream network."
+        },
+        {
+            "tool": "stream_link_slope",
+            "description": "Estimates the average slope of each link (or tributary) in a stream network."
+        },
+        {
+            "tool": "stream_slope_continuous",
+            "description": "Estimates the slope of each grid cell in a stream network."
+        },
+        {
+            "tool": "topological_stream_order",
+            "description": "Assigns each link in a stream network its topological order."
+        },
+        {
+            "tool": "tributary_identifier",
+            "description": "Assigns a unique identifier to each tributary in a stream network."
+        },
+        {
+            "tool": "vector_stream_network_analysis",
+            "description": "This tool performs common stream network analysis operations on an input vector stream file."
+        }
+    ],
+    "Whitebox Utilities\n": [
+        {
+            "tool": "install_wb_extension",
+            "description": "Use to install a Whitebox extension product."
+        },
+        {
+            "tool": "launch_wb_runner",
+            "description": "Opens the Whitebox Runner application."
+        }
+    ],
+    "Machine Learning\n": [
+        {
+            "tool": "k_means_clustering",
+            "description": "Performs a k-means clustering operation on a multi-spectral dataset."
+        },
+        {
+            "tool": "modified_k_means_clustering",
+            "description": "Performs a modified k-means clustering operation on a multi-spectral dataset."
+        }
+    ]
+}
