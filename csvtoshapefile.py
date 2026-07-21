@@ -12,4 +12,6 @@ csv_adding_coloumns = pd.read_csv(path_csv, usecols=['min_age_yr','max_age_yr','
 csv_adding_coloumns = csv_adding_coloumns.round({'min_age_yr': 2, 'max_age_yr': 2})
 file = file.merge(csv_adding_coloumns, left_index=True, right_index=True)
 
+file = file.set_crs('ESRI:104971', allow_override=True)  # Mars 2000 Sphere
+
 file.to_file('/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/Jack, Ze-Wen summer project files/Haw_St_shapefiles/Haw_St_geo_20070426_region_with_age.shp')

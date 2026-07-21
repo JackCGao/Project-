@@ -72,6 +72,9 @@ RECHARGE_SHPS = {
     'lanai':   f'{_recharge_base}/Lanai Water Budget Components 2020/Lanai_water_budget_components_subarea_inches.shp',
     'molokai': f'{_recharge_base}/Molokai Water Budget Components 2020/Molokai_water_budget_components_subarea_inches.shp',
     'maui':    f'{_recharge_base}/Maui Water Budget Components 2020/Maui_water_budget_components_subarea_inches.shp',
+    'oahu':    f'{_recharge_base}/Oahu Water Budget Components 2020/Oahu_water_budget_components_subarea_inches.shp',
+    'hawaii':  [f'{_recharge_base}/Hawaii Water Budget Components Part 1/Hawaii_water_budget_components_subarea_inches_P1.shp',
+                f'{_recharge_base}/Hawaii Water Budget Components Part 2/Hawaii_water_budget_components_subarea_inches_P2.shp'],
 }
 
 PRECIP_FIELD = 'S1_RF'   # rainfall field in the water-budget shapefiles (mm/yr)
@@ -80,11 +83,28 @@ _recharge_gdfs = {}
 
 def _load_recharge_shp(island):
     if island not in _recharge_gdfs:
-        gdf = gpd.read_file(RECHARGE_SHPS[island])
-        cols = ['geometry', 'S1_Tot_rc']
-        if PRECIP_FIELD in gdf.columns:
-            cols.append(PRECIP_FIELD)
-        _recharge_gdfs[island] = gdf[cols].copy()
+        paths = RECHARGE_SHPS[island]
+        if isinstance(paths, str):
+            paths = [paths]
+
+        parts = []
+        for path in paths:
+            gdf = gpd.read_file(path)
+            cols = ['geometry', 'S1_Tot_rc']
+            if PRECIP_FIELD in gdf.columns:
+                cols.append(PRECIP_FIELD)
+            parts.append(gdf[cols])
+
+        if len(parts) > 1:
+            crs_set = {p.crs for p in parts}
+            if len(crs_set) > 1:
+                parts = [p.to_crs(parts[0].crs) for p in parts]
+            combined = pd.concat(parts, ignore_index=True)
+            combined = gpd.GeoDataFrame(combined, geometry='geometry', crs=parts[0].crs)
+        else:
+            combined = parts[0]
+
+        _recharge_gdfs[island] = combined.copy()
     return _recharge_gdfs[island]
 
 def rasterize_recharge(ref_path, island):
@@ -243,7 +263,38 @@ def _log_lim(arr):
     hi = 10 ** np.ceil( np.log10(np.nanmax(arr)))
     return lo, hi
 
+_hawaii_dir    = f'{base_dir}/new (1)'
+_kahoolawe_dir = f'{base_dir}/new'
+_oahu_dir      = f'{base_dir}/oahu/new'
+
 island_files = {
+    'hawaii': {
+        'flow_accum': f'{_hawaii_dir}/hawaii_d8maxflux_nans.tif',
+        'slope':      f'{_hawaii_dir}/hawaii_slope_nans.tif',
+        'erosion':    f'{_hawaii_dir}/hawaii_erosion_nans.tif',
+        'dem':        f'{_hawaii_dir}/hawaii_dem_enforced_qgis_albers.tif',
+        'flowdir':    f'{_hawaii_dir}/hawaii_dem_enforced_flowdir.tif',
+        'precip':     f'{_hawaii_dir}/hawaii_precip_qgis_albers.tif',
+        'mass_flux':  f'{output_dir}/hawaii_precip_net_accum.tif',
+    },
+    'kahoolawe': {
+        'flow_accum': f'{_kahoolawe_dir}/kahoolawe_d8maxflux_nans.tif',
+        'slope':      f'{_kahoolawe_dir}/kahoolawe_slope_nans.tif',
+        'erosion':    f'{_kahoolawe_dir}/kahoolawe_erosion_nans.tif',
+        'dem':        f'{_kahoolawe_dir}/kahoolawe_dem_enforced_qgis_albers.tif',
+        'flowdir':    f'{_kahoolawe_dir}/kahoolawe_dem_enforced_flowdir.tif',
+        'precip':     f'{_kahoolawe_dir}/kahoolawe_precip_qgis_albers.tif',
+        'mass_flux':  f'{output_dir}/kahoolawe_precip_net_accum.tif',
+    },
+    'oahu': {
+        'flow_accum': f'{_oahu_dir}/oahu_d8maxflux_nans.tif',
+        'slope':      f'{_oahu_dir}/oahu_slope_nans.tif',
+        'erosion':    f'{_oahu_dir}/oahu_erosion_nans.tif',
+        'dem':        f'{_oahu_dir}/oahu_dem_enforced_qgis_albers.tif',
+        'flowdir':    f'{_oahu_dir}/oahu_dem_enforced_flowdir.tif',
+        'precip':     f'{_oahu_dir}/oahu_precip_qgis_albers.tif',
+        'mass_flux':  f'{output_dir}/oahu_precip_net_accum.tif',
+    },
     'kauai': {
         'flow_accum': f'{base_dir}/kauai/new/kauai_d8maxflux_nans.tif',
         'slope':      f'{base_dir}/kauai/new/kauai_slope.tif',
@@ -336,8 +387,8 @@ def process_island(island):
     x_fit = np.logspace(np.log10(QS_pos.min()), np.log10(QS_pos.max()), 200)
 
     fig, ax = plt.subplots(figsize=(6, 5))
+    ax.scatter(QS_pos, E_pos, s=3, alpha=0.115, edgecolors='none', color='#888888')
     _kde_plot(ax, QS_pos, E_pos, log_scale=True)
-    ax.scatter(QS_pos, E_pos, s=3, alpha=0.25, edgecolors='none', color='#888888')
     ax.plot(x_fit, (10**b) * (x_fit ** m), color='#3a6ea5', linewidth=1.8)
     ax.set_xscale('log')
     ax.set_yscale('log')
@@ -371,8 +422,8 @@ def process_island(island):
     x_fit2 = np.logspace(np.log10(Q_pos.min()), np.log10(Q_pos.max()), 200)
 
     fig, ax = plt.subplots(figsize=(6, 5))
+    ax.scatter(Q_pos, ES_pos, s=3, alpha=0.115, edgecolors='none', color='#888888')
     _kde_plot(ax, Q_pos, ES_pos, log_scale=True)
-    ax.scatter(Q_pos, ES_pos, s=3, alpha=0.25, edgecolors='none', color='#888888')
     ax.plot(x_fit2, (10**b2) * (x_fit2 ** c), color='#3a6ea5', linewidth=1.8)
     ax.set_xscale('log')
     ax.set_yscale('log')
@@ -384,7 +435,7 @@ def process_island(island):
     ax.set_title(island.capitalize())
     textstr2 = (f"Spearman's rank correlation = {rho2:.4f}\n"
                 f"Log–Log R² = {r2_2:.4f}\n"
-                f"c = {c:.4f},  k = 10^{b2:.4f} = {10**b2:.4f}")
+                f"c = {c:.4f},  k = 10^{b2:.4f} = {10**b2:.4g}")
     ax.text(0.05, 0.05, textstr2, transform=ax.transAxes,
             fontsize=9, verticalalignment='bottom',
             bbox=dict(boxstyle='round', facecolor='white', alpha=0.99, edgecolor='gray'))
@@ -392,22 +443,43 @@ def process_island(island):
     plt.savefig(os.path.join(output_dir, f'{island}_E_vs_QcS.png'), dpi=200)
     plt.close(fig)
 
+    
     # --- Plot 3: Spearman's rho vs c (sweep) ---
-    c_vals   = np.linspace(0, 2, 300)
+    c_vals   = np.linspace(0, 3, 300)
     rho_vals = np.array([stats.spearmanr(Q_pos**cv * S_pos, E_pos)[0] for cv in c_vals])
 
     # Spearman-optimal c: peak of the sweep
-    c_sp  = c_vals[np.argmax(rho_vals)]
+    argmax_idx = np.argmax(rho_vals)
+    c_sp  = c_vals[argmax_idx]
     # k for c_sp: best-fit intercept given fixed c_sp (log-space mean)
-    k_sp  = 10 ** np.mean(log_ES - c_sp * log_Q)
+    k_sp  = 10 ** np.mean(log_E - c_sp * log_Q)
     rho_sp, _ = stats.spearmanr(Q_pos**c_sp * S_pos, E_pos)
+    
+    rho_span = rho_vals.max() - rho_vals.min()
+    at_boundary = argmax_idx in (0, len(c_vals) - 1)
+    near_flat_at_boundary = (rho_span > 0) and (
+        abs(rho_vals[-1] - rho_vals.max()) < 0.02 * rho_span
+    )
+    c_sp_unreliable = at_boundary or near_flat_at_boundary
+    if c_sp_unreliable:
+        reason = "argmax at search-range edge" if at_boundary else \
+                 "sweep is flat near the edge -- true optimum may lie outside [0, 3]"
+        print(f"[{island}] WARNING: Spearman-optimal c={c_sp:.4f} is not a "
+              f"well-defined interior peak ({reason}); treat as unreliable.")
 
     fig, ax = plt.subplots(figsize=(6, 4))
     ax.plot(c_vals, rho_vals, color='#3a6ea5', linewidth=1.8)
     ax.axvline(c,    color='#e06b3a', linewidth=1.4, linestyle='--',
                label=f'OLS c = {c:.4f}')
+    c_sp_label = f'Spearman c = {c_sp:.4f}' + (' (unreliable)' if c_sp_unreliable else '')
     ax.axvline(c_sp, color='#2ca02c', linewidth=1.4, linestyle=':',
-               label=f'Spearman c = {c_sp:.4f}')
+               label=c_sp_label)
+    if c_sp_unreliable:
+        ax.text(0.05, 0.95,
+                "No well-defined interior peak --\nc is not a reliable optimum",
+                transform=ax.transAxes, fontsize=8.5, verticalalignment='top',
+                color='#b22222',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.9, edgecolor='#b22222'))
     ax.set_xlabel('Exponent $c$')
     ax.set_ylabel("Spearman's $\\rho$")
     ax.set_title(island.capitalize())
@@ -420,8 +492,8 @@ def process_island(island):
     x_fit_sp = np.logspace(np.log10(Q_pos.min()), np.log10(Q_pos.max()), 200)
 
     fig, ax = plt.subplots(figsize=(6, 5))
+    ax.scatter(Q_pos, ES_pos, s=3, alpha=0.115, edgecolors='none', color='#888888')
     _kde_plot(ax, Q_pos, ES_pos, log_scale=True)
-    ax.scatter(Q_pos, ES_pos, s=3, alpha=0.25, edgecolors='none', color='#888888')
     ax.plot(x_fit_sp, k_sp * (x_fit_sp ** c_sp), color='#3a6ea5', linewidth=1.8)
     ax.set_xscale('log')
     ax.set_yscale('log')
@@ -431,11 +503,14 @@ def process_island(island):
     ax.set_xlabel(r'Discharge Proxy ($Q$)')
     ax.set_ylabel(r'$E \,/\, S$ [m]')
     ax.set_title(island.capitalize())
-    ax.text(0.05, 0.05,
-            f"Spearman's ρ = {rho_sp:.4f}\n"
-            f"c = {c_sp:.4f},  k = {k_sp:.4f}",
+    fit_stats_text = (f"Spearman's ρ = {rho_sp:.4f}\n"
+                       f"c = {c_sp:.4f},  k = {k_sp:.4g}")
+    if c_sp_unreliable:
+        fit_stats_text += "\n(c not a well-defined optimum -- see rho_vs_c plot)"
+    ax.text(0.05, 0.05, fit_stats_text,
             transform=ax.transAxes, fontsize=9, verticalalignment='bottom',
-            bbox=dict(boxstyle='round', facecolor='white', alpha=0.99, edgecolor='gray'))
+            bbox=dict(boxstyle='round', facecolor='white', alpha=0.99,
+                      edgecolor='#b22222' if c_sp_unreliable else 'gray'))
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, f'{island}_E_vs_QcS_spearman.png'), dpi=200)
     plt.close(fig)
@@ -452,7 +527,7 @@ def process_island(island):
         resid_sub = log_resid[age_valid]
 
         fig, ax = plt.subplots(figsize=(6, 5))
-        ax.scatter(age_ma, resid_sub, s=3, alpha=0.25, edgecolors='none', color='#888888')
+        ax.scatter(age_ma, resid_sub, s=3, alpha=0.115, edgecolors='none', color='#888888')
         ax.axhline(0, color='#e06b3a', linewidth=1.2, linestyle='--')
         ax.set_xlim(age_ma.min(), age_ma.max())
         ax.set_ylim(resid_sub.min(), resid_sub.max())
@@ -487,7 +562,7 @@ def process_island(island):
         resid_rc  = log_resid[rc_valid]
 
         fig, ax = plt.subplots(figsize=(6, 5))
-        ax.scatter(rc_sub, resid_rc, s=3, alpha=0.25, edgecolors='none', color='#888888')
+        ax.scatter(rc_sub, resid_rc, s=3, alpha=0.115, edgecolors='none', color='#888888')
         ax.axhline(0, color='#e06b3a', linewidth=1.2, linestyle='--')
         ax.set_xscale('log')
         ax.set_xlim(*_log_lim(rc_sub))
@@ -522,8 +597,8 @@ def process_island(island):
         x_fit6 = np.logspace(np.log10(QS_net.min()), np.log10(QS_net.max()), 200)
 
         fig, ax = plt.subplots(figsize=(6, 5))
+        ax.scatter(QS_net, E_net, s=3, alpha=0.115, edgecolors='none', color='#888888')
         _kde_plot(ax, QS_net, E_net, log_scale=True)
-        ax.scatter(QS_net, E_net, s=3, alpha=0.25, edgecolors='none', color='#888888')
         ax.plot(x_fit6, (10**b6) * (x_fit6 ** m6), color='#3a6ea5', linewidth=1.8)
         ax.set_xscale('log')
         ax.set_yscale('log')
@@ -553,8 +628,8 @@ def process_island(island):
         x_fit7 = np.logspace(np.log10(Q_net.min()), np.log10(Q_net.max()), 200)
 
         fig, ax = plt.subplots(figsize=(6, 5))
+        ax.scatter(Q_net, EN_net, s=3, alpha=0.115, edgecolors='none', color='#888888')
         _kde_plot(ax, Q_net, EN_net, log_scale=True)
-        ax.scatter(Q_net, EN_net, s=3, alpha=0.25, edgecolors='none', color='#888888')
         ax.plot(x_fit7, (10**b7) * (x_fit7 ** c7), color='#3a6ea5', linewidth=1.8)
         ax.set_xscale('log')
         ax.set_yscale('log')
@@ -566,7 +641,7 @@ def process_island(island):
         ax.set_title(island.capitalize())
         textstr7 = (f"Spearman's rank correlation = {rho7:.4f}\n"
                     f"Log–Log R² = {r2_7:.4f}\n"
-                    f"c = {c7:.4f},  k = 10^{b7:.4f} = {10**b7:.4f}")
+                    f"c = {c7:.4f},  k = 10^{b7:.4f} = {10**b7:.4g}")
         ax.text(0.05, 0.05, textstr7, transform=ax.transAxes,
                 fontsize=9, verticalalignment='bottom',
                 bbox=dict(boxstyle='round', facecolor='white', alpha=0.99, edgecolor='gray'))
@@ -577,6 +652,8 @@ def process_island(island):
     return {'island': island,
             'slope': m, 'intercept': b, 'r2_QS': r2_1, 'rho': rho,
             'c': c, 'r2_QcS': r2_2, 'rho2': rho2,
+            'c_sp': c_sp, 'k_sp': k_sp, 'rho_sp': rho_sp,
+            'c_sp_unreliable': c_sp_unreliable,
             'n': Q_pos.size}
 
 # --- Run for all islands ---
