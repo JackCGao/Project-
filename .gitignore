@@ -1,0 +1,15 @@
+# Python bytecode / caches
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Large generated outputs -- regenerable from the scripts, not source.
+# (maxflux_stream_points.py, unweighted_stream_points.py, watershed.py, etc.
+# write here; some of these shapefiles run 100-175MB, over GitHub's 100MB
+# per-file limit)
+watershed_outputs/
+
+# Mars DEM/hillshade working files (50-150MB+ .grd/.tif rasters)
+mars_map_work/

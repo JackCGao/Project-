@@ -1,162 +1,65 @@
 import numpy as np
 import geopandas as gpd
-import rasterio
-from shapely.geometry import Point
 import pandas as pd
 import matplotlib.pyplot as plt
-from osgeo import gdal
-import os
 from scipy import stats
 
-ISLAND_COLORS = {
-    'Hawaii':    '#d62728',
-    'Kahoolawe': '#9467bd',
-    'Oahu':      '#2ca02c',
-    'Kauai':     '#1f77b4',
-    'Lanai':     '#8c564b',
-    'Molokai':   '#e377c2',
-    'Maui':      '#ff7f0e',
-}
+from maxflux_stream_points import OUTPUT_DIR as MAXFLUX_OUTPUT_DIR
 
-def merge_rasters_vrt(raster_paths, output_path):
+MAXFLUX_POINTS_PATH = MAXFLUX_OUTPUT_DIR + 'all_islands_maxflux_stream_points.shp'
+
+
+def match_gages_to_raster(gpkg_path, output_path=None, max_dist_m=1000):
     """
-    Uses GDAL to create a virtual dataset (VRT) that references all the input rasters.
-    This acts like one giant file but uses very little RAM, and avoids 'Too many
-    open files' errors.
-
-    output_path should end in .vrt -- this stays a small XML file that
-    references the source rasters (no data is copied/materialized), so
-    reading it just reads windows from the underlying files on demand.
-    Previously this used driver.CreateCopy() to bake the VRT into a real
-    GeoTIFF, but since the 7 islands' combined bounding box spans the whole
-    Hawaiian chain (~528km x 373km at ~9.8m resolution, ~2 billion pixels,
-    mostly nodata ocean between islands), that materialized an ~8GB+ file
-    for almost no benefit -- writing it out is what was timing out.
-
-    Parameters:
-    raster_paths (list of str): List of file paths to the input rasters to be merged.
-    output_path (str): File path for the output .vrt file.
-
-    Returns:
-    None
-    """
-    vrt_ds = gdal.BuildVRT(output_path, raster_paths)
-    vrt_ds = None
-
-def extract_stream_pixels(flowaccum_path, streams_path):
-    """
-    Load one island's flow-accumulation raster and its companion binary
-    streams mask (1 = stream, nodata elsewhere), and return the x/y/value
-    of only the pixels that fall on the actual stream network.
-
-    The two rasters must share the same grid (shape + transform) -- true
-    for all 7 islands here (same source DEM). Restricting to the streams
-    mask is what keeps the pixel count small (thousands, not hundreds of
-    millions): without it, ~every land pixel in a flow-accumulation raster
-    has *some* nonzero value, so a plain isnan/nodata check treats nearly
-    the whole landmass as "stream."
-    """
-    with rasterio.open(flowaccum_path) as fa_src, rasterio.open(streams_path) as st_src:
-        if fa_src.shape != st_src.shape or fa_src.transform != st_src.transform:
-            raise ValueError(
-                f"Grid mismatch between {flowaccum_path} and {streams_path}: "
-                f"{fa_src.shape}/{fa_src.transform} vs {st_src.shape}/{st_src.transform}"
-            )
-        flow = fa_src.read(1)
-        streams = st_src.read(1)
-        transform = fa_src.transform
-        crs = fa_src.crs
-
-        on_stream = (streams == 1)
-        valid_mask = on_stream & np.isfinite(flow) & (flow > 0)
-        fa_nodata = fa_src.nodata
-        if fa_nodata is not None and not np.isnan(fa_nodata):
-            valid_mask &= (flow != fa_nodata)
-
-        rows, cols = np.where(valid_mask)
-        xs, ys = rasterio.transform.xy(transform, rows, cols)
-        values = flow[rows, cols]  # already in m³/yr -- no unit conversion needed
-
-    return xs, ys, values, crs
-
-
-def match_gages_to_raster(gpkg_path, raster_stream_pairs, output_path=None, max_dist_m=1000):
-    """
-    Match gage stations to nearest stream pixel using geopandas sjoin_nearest.
-    Both inputs must be in the same projected CRS.
-
-    raster_stream_pairs: list of (island_name, flowaccum_path, streams_path)
-    tuples, one per island. Each island is read and masked independently
-    (rather than merging all islands into one giant raster first) since the
-    combined bounding box across the whole Hawaiian chain is mostly nodata
-    ocean. island_name is carried through to the matched output so points
-    can be colored/grouped by island downstream.
+    Match gage stations to the nearest point in maxflux_stream_points.py's
+    combined output (watershed_outputs/all_islands_maxflux_stream_points.shp
+    -- D8 max-flux sampled at stream-pixel points, already restricted to
+    each island's own stream mask and within 50 px of the statewide
+    hydrography layer) using geopandas sjoin_nearest. Both inputs must be in
+    the same projected CRS.
     """
 
     # 1. Load gage stations
     gdf = gpd.read_file(gpkg_path)
     print(f"Loaded {len(gdf)} gage stations")
 
-    # 2. Extract stream-masked pixels from every island, one at a time
-    all_xs, all_ys, all_values, all_islands = [], [], [], []
-    crs_raster = None
-    for island_name, flowaccum_path, streams_path in raster_stream_pairs:
-        xs, ys, values, crs = extract_stream_pixels(flowaccum_path, streams_path)
-        if crs_raster is None:
-            crs_raster = crs
-        elif crs_raster != crs:
-            raise ValueError(
-                f"CRS mismatch between island rasters:\n"
-                f"  {raster_stream_pairs[0][1]}: {crs_raster}\n"
-                f"  {flowaccum_path}: {crs}"
-            )
-        all_xs.extend(xs)
-        all_ys.extend(ys)
-        all_values.extend(values)
-        all_islands.extend([island_name] * len(xs))
-        print(f"  {os.path.basename(flowaccum_path)}: {len(xs)} stream pixels")
-
-    xs, ys, values, islands = all_xs, all_ys, all_values, all_islands
-    print(f"Found {len(xs)} valid stream pixels total")
+    # 2. Load maxflux stream points
+    points_gdf = gpd.read_file(MAXFLUX_POINTS_PATH)
+    print(f"Loaded {len(points_gdf)} maxflux stream points")
 
     # 3. CRS checks
-    if gdf.crs != crs_raster:
+    if gdf.crs != points_gdf.crs:
         raise ValueError(
             f"CRS mismatch:\n"
             f"  Gages:  {gdf.crs}\n"
-            f"  Raster: {crs_raster}\n"
+            f"  Points: {points_gdf.crs}\n"
             f"Reproject one to match the other before running."
         )
-    if crs_raster.is_geographic:
+    if points_gdf.crs.is_geographic:
         raise ValueError(
-            f"CRS is geographic ({crs_raster}). Both inputs must be in a projected CRS."
+            f"CRS is geographic ({points_gdf.crs}). Both inputs must be in a projected CRS."
         )
 
-    # 4. Build GeoDataFrame of valid pixels
-    pixel_gdf = gpd.GeoDataFrame(
-        {'raster_Q': values, 'island': islands},
-        geometry=[Point(x, y) for x, y in zip(xs, ys)],
-        crs=crs_raster
-    )
-
-    # 5. Spatial nearest join
+    # 4. Spatial nearest join
     matched = gpd.sjoin_nearest(
         gdf,
-        pixel_gdf[['raster_Q', 'island', 'geometry']],
+        points_gdf[['maxflux', 'island', 'geometry']],
         how='left',
         max_distance=max_dist_m,
         distance_col='dist_to_px'
     )
-    
-    # 6. Clean up duplicates
+    matched = matched.rename(columns={'maxflux': 'raster_Q'})
+
+    # 5. Clean up duplicates
     matched = matched.drop(columns=['index_right', 'fid'], errors='ignore')
     matched = matched.drop_duplicates(subset='site_no', keep='first')
     matched = matched.reset_index(drop=True)
+    matched['island'] = matched['island'].str.capitalize()
 
     valid_count = matched['raster_Q'].notna().sum()
     print(f"Matched {valid_count}/{len(matched)} gages within {max_dist_m}m")
-    
-    # 7. Save
+
+    # 6. Save
     if output_path:
         if output_path.endswith('.csv'):
             matched.drop(columns='geometry').to_csv(output_path, index=False)
@@ -165,63 +68,43 @@ def match_gages_to_raster(gpkg_path, raster_stream_pairs, output_path=None, max_
         elif output_path.endswith('.shp'):
             matched.to_file(output_path)
         print(f"Saved to: {output_path}")
-    
+
     return matched
 
 def plot_comparison(gdf, output_path, raster_col='raster_Q', measured_col='mean_Q_m3y'):
     """
-    X-Y comparison plot of measured vs raster discharge, colored by island,
-    with a log-log OLS regression fit (same style as recreation.py's Plot 1)
-    in place of a 1:1 line -- raster_Q is a flow-accumulation-based proxy,
-    not a claim of absolute agreement with measured discharge.
+    X-Y comparison plot of measured vs raster discharge on log-log axes,
+    against a 1:1 reference line -- raster_Q is a flow-accumulation-based
+    proxy, so this shows how far off absolute agreement it is rather than
+    fitting a trend to it.
     """
     valid = gdf.dropna(subset=[raster_col, measured_col, 'island'])
     x = valid[measured_col].values
     y = valid[raster_col].values
-    islands = valid['island'].values
 
     # Log-scale
     pos = (x > 0) & (y > 0)
-    x, y, islands = x[pos], y[pos], islands[pos]
+    x, y = x[pos], y[pos]
 
     fig, ax = plt.subplots(figsize=(6, 5))
-    for island in np.unique(islands):
-        mask = islands == island
-        ax.scatter(x[mask], y[mask], s=20, alpha=0.6, edgecolors='k',
-                   linewidth=0.3, color=ISLAND_COLORS.get(island, '#888888'),
-                   label=island)
+    ax.scatter(x, y, s=20, alpha=0.6, edgecolors='k', linewidth=0.3, color='#1f77b4')
 
-    # add stats
-    log_x, log_y = np.log10(x), np.log10(y)
-
-    m, b, r, _, _ = stats.linregress(log_x, log_y)
-    r2_log = r ** 2
     rho, _ = stats.spearmanr(x, y)
 
-    x_fit = np.logspace(log_x.min(), log_x.max(), 200)
-    ax.plot(x_fit, (10 ** b) * (x_fit ** m), color='black', linewidth=1.8,
-            linestyle='--', label='log-log OLS fit')
-
-    # regular (linear-space) OLS fit, plotted over the same log-log axes --
-    # appears as a curve here since it's a straight line in linear space
-    m_lin, b_lin, r_lin, _, _ = stats.linregress(x, y)
-    r2_lin = r_lin ** 2
-
-    x_fit_lin = np.linspace(x.min(), x.max(), 200)
-    y_fit_lin = m_lin * x_fit_lin + b_lin
-    lin_plot_mask = y_fit_lin > 0  # log-scale y-axis can't show <=0 values
-    ax.plot(x_fit_lin[lin_plot_mask], y_fit_lin[lin_plot_mask], color='#3a6ea5',
-            linewidth=1.8, linestyle=':', label='linear OLS fit')
+    lo = min(x.min(), y.min())
+    hi = max(x.max(), y.max())
+    ax.plot([lo, hi], [lo, hi], color='black', linewidth=1.8,
+            linestyle='--', label='1:1 line')
 
     ax.set_xscale('log')
     ax.set_yscale('log')
+    ax.set_xlim(lo, hi)
+    ax.set_ylim(lo, hi)
     ax.set_xlabel(r'$Q_{\text{gage}}$ (m$^3$/yr)')
     ax.set_ylabel(r'$Q_{\text{model}}$ (m$^3$/yr)')
     ax.legend(fontsize=8, markerscale=1.2, loc='upper left')
 
-    stats_text = (f"Spearman's rho = {rho:.4f}\n"
-                  f"Log-Log R2 = {r2_log:.4f}\n"
-                  f"Linear R2 = {r2_lin:.4f}")
+    stats_text = f"Spearman's rho = {rho:.4f}"
     ax.text(0.05, 0.05, stats_text, transform=ax.transAxes, fontsize=9,
             verticalalignment='bottom',
             bbox=dict(boxstyle='round', facecolor='white', alpha=0.99, edgecolor='gray'))
@@ -240,19 +123,14 @@ def plot_comparison_linear(gdf, output_path, raster_col='raster_Q', measured_col
     valid = gdf.dropna(subset=[raster_col, measured_col, 'island'])
     x = valid[measured_col].values
     y = valid[raster_col].values
-    islands = valid['island'].values
 
     # drop anomalous negative-measured-discharge gages (data artifacts, not
     # physically meaningful -- e.g. tidally-influenced or diversion sites)
     pos = x > 0
-    x, y, islands = x[pos], y[pos], islands[pos]
+    x, y = x[pos], y[pos]
 
     fig, ax = plt.subplots(figsize=(6, 5))
-    for island in np.unique(islands):
-        mask = islands == island
-        ax.scatter(x[mask], y[mask], s=20, alpha=0.6, edgecolors='k',
-                   linewidth=0.3, color=ISLAND_COLORS.get(island, '#888888'),
-                   label=island)
+    ax.scatter(x, y, s=20, alpha=0.6, edgecolors='k', linewidth=0.3, color='#1f77b4')
 
     m_lin, b_lin, r_lin, _, _ = stats.linregress(x, y)
     r2_lin = r_lin ** 2
@@ -279,35 +157,16 @@ def plot_comparison_linear(gdf, output_path, raster_col='raster_Q', measured_col
 
 
 if __name__ == '__main__':
-    output_path = 'gage_raster_comparison.png'
+    output_dir = '/Users/jackgao/Summer Work 2026/Temp Output Placements'
+    output_path = f'{output_dir}/gage_raster_comparison.png'
 
-    # (island name, flow-accumulation raster, companion binary streams mask)
-    # per island -- both rasters share the same grid for a given island.
-    raster_stream_pairs = [
-        ('Hawaii', '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/new (1)/hawaii_d8maxflux_nans.tif',
-         '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/new (1)/hawaii_streams_unweighted_albers.tif'),
-        ('Maui', '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/maui/new/maui_d8maxflux_nans.tif',
-         '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/maui/new/maui_streams_unweighted_albers.tif'),
-        ('Lanai', '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/lanai/new/lanai_d8maxflux_nans.tif',
-         '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/lanai/new/lanai_streams_unweighted_albers.tif'),
-        ('Kahoolawe', '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/new/kahoolawe_d8maxflux_nans.tif',
-         '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/new/kahoolawe_streams_unweighted_albers.tif'),
-        ('Kauai', '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/kauai/new/kauai_d8maxflux_nans.tif',
-         '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/kauai/new/kauai_streams_unweighted_albers.tif'),
-        ('Oahu', '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/oahu/new/oahu_d8maxflux_nans.tif',
-         '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/oahu/new/oahu_streams_unweighted_albers.tif'),
-        ('Molokai', '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/molokai/new/molokai_d8maxflux_nans.tif',
-         '/Users/jackgao/Library/CloudStorage/Dropbox-Jackgaoc/Jack Gao/molokai/new/molokai_streams_unweighted_albers.tif'),
-    ]
-
-    print("Matching gages to raster...")
+    print("Matching gages to nearest maxflux stream point...")
     gdf = match_gages_to_raster(
         gpkg_path='HI_gages_discharge_daily_albers.shp',
-        raster_stream_pairs=raster_stream_pairs,
-        output_path='HI_gages_matched.gpkg',
+        output_path=f'{output_dir}/HI_gages_matched.gpkg',
         max_dist_m=500
     )
 
     print("Plotting comparison...")
     plot_comparison(gdf, output_path)
-    plot_comparison_linear(gdf, 'gage_raster_comparison_linear.png')
+    plot_comparison_linear(gdf, f'{output_dir}/gage_raster_comparison_linear.png')
